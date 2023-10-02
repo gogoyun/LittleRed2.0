@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 defineProps({
   name: String,
 });
@@ -19,6 +19,7 @@ defineProps({
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  background-color: #8c8c8c;
 }
 
 #container strong {

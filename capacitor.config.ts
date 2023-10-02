@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.sympasoft.littlered2',
   appName: 'littlered2',
   webDir: 'dist',
   server: {
