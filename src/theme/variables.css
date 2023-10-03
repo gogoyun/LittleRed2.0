@@ -4,6 +4,7 @@ http://ionicframework.com/docs/theming/ */
 /** google font **/
 @import url(https://db.onlinewebfonts.com/c/887bf037e9cf41f0ab02c38fe9d94341?family=MElle+HK+Medium);
 @import url(https://db.onlinewebfonts.com/c/ea5c514cbb95af4be128bb9cd5dc1101?family=MElle+HKS+Xbold);
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /** basic **/
 body {
@@ -16,6 +17,7 @@ body {
 /** Ionic CSS Variables **/
 :root {
   /** basic **/
+  --color: #494949;
   --ion-text-color: #494949;
   --ion-text-color-g: #6fbbac;
   --ion-text-color-r-light: #f17456;
@@ -23,6 +25,7 @@ body {
   --ion-item-background: rgba(255, 255, 255, 0);
   --ion-font-family: "MElle HK Medium";
   --ion-font-family-bold: "MElle HKS Xbold";
+  --ion-font-family-number: "Albert Sans";
   
   /** primary **/
   --ion-color-primary: #494949;
