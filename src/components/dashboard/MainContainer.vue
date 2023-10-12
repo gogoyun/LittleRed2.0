@@ -102,26 +102,58 @@
             <a href="" class="more ion-align-self-end">MORE</a>
           </div>
         </div>
-        <h2>每日新發現</h2>
+        <div class="daily">
+          <h2>每日新發現</h2>
+          <ion-row class="ion-no-padding" style="margin: 0 -5px;">
+            <ion-col>
+              <ion-img src="https://placehold.co/130x130"></ion-img>
+              <div class="text">
+                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字檜木十三字', 14) }}</div>
+                <div class="price">NT.650</div>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-img src="https://placehold.co/130x130"></ion-img>
+              <div class="text">
+                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
+                <div class="price">NT.650</div>
+              </div>
+            </ion-col>
+            <ion-col>
+              <ion-img src="https://placehold.co/130x130"></ion-img>
+              <div class="text">
+                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
+                <div class="price">NT.650</div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
       </ion-col>
       <ion-col class="ion-no-padding">
-        <ion-button class="start-btn">立即開始 小紅賣瓜</ion-button>
+        <ion-button class="start-btn">
+          立即開始 小紅賣瓜&ensp;
+          <ion-thumbnail slot="end">
+            <img src="assets/icon/logo_white.svg" />
+          </ion-thumbnail>
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-content>
 </template>
 
 <script setup>
-import { IonContent, IonImg, IonRow, IonCol, IonButton } from '@ionic/vue';
+import { IonContent, IonImg, IonRow, IonCol, IonIcon, IonButton, IonThumbnail } from '@ionic/vue';
 </script>
 <script>
 import { defineComponent } from 'vue';
 import { square, informationCircle } from 'ionicons/icons';
+import { overReplace } from "@/utils/common.js";
 export default defineComponent({
 	setup() {
 		return {
 			square,
-      informationCircle
+      informationCircle,
+      overReplace,
 		}
 	}
 })
@@ -228,6 +260,7 @@ export default defineComponent({
   .recommend p {
     margin-left: 8px;
     font-size: 1em;
+    color: #808080;
     min-height: 40px;
     margin-bottom: 0;
   }
@@ -240,6 +273,26 @@ export default defineComponent({
     font-family: var(--ion-font-family-number);
     text-decoration: none;
   }
+  .daily {
+    margin-bottom: 20px;
+  }
+  .daily h2 {
+    margin-bottom: 10px;
+  }
+  .daily .text {
+    position: relative;
+    word-break:break-all;
+    min-height: 2.7em;
+  }
+  .daily .price {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #808080;
+    font-family: var(--ion-font-family-number);
+    font-weight: bold;
+    font-size: 0.9em;
+  }
   .start-btn {
     width: 100%;
     background: linear-gradient(var(--ion-text-color-r-light), var(--ion-text-color-r-dark) 50%);
@@ -250,5 +303,12 @@ export default defineComponent({
     margin-top: 0;
     margin-bottom: 0;
     margin-inline: 0;
+    font-size: 1.1em;
+    --padding-top: 1.4em;
+    --padding-bottom: 1.4em;
+    clip-path: inset(0 0 round 0 100px 0 0);
+  }
+  .start-btn ion-thumbnail {
+    --size: 2em;
   }
 </style>
