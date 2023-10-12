@@ -74,7 +74,7 @@
 					</ion-avatar>
 				</ion-button>
 			</ion-buttons>
-			<ion-buttons slot="primary">
+			<ion-buttons slot="end">
 				<ion-button>
 					<ion-avatar>
 						<ion-img src='assets/icon/avatar.jpg'></ion-img>
@@ -104,6 +104,8 @@ export default defineComponent({
 	ion-toolbar {
 		--background: rgba(255, 255, 255, 0);
 		box-shadow: 0px rgba(255, 255, 255, 0) !important;
+		--padding-end: 30px;
+		--min-height: 80px;
 	}
 	ion-modal {
 		--height: auto;

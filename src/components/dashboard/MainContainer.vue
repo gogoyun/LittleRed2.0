@@ -1,10 +1,5 @@
 <template>
-  <ion-content>
-    <div class="bg">
-      <ion-img
-        src="assets/image/dashboard_bg.svg"
-      ></ion-img>
-    </div>
+  <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col class="ion-padding hello" size="12">
         <h1>HELLO, <span>小紅暱稱</span></h1>
@@ -27,12 +22,11 @@
       </ion-col>
       <ion-col class="ion-no-padding ion-padding-horizontal" size="12">
         <div class="cooperate-msg">
-          <ion-row class="ion-align-items-center">
-            <ion-col size="auto"></ion-col>
-            <ion-col style="padding-right: 0">
+          <ion-row class="ion-padding ion-align-items-center">
+            <ion-col>
               <ion-row class="ion-align-items-center">
-                <ion-col size="auto">
-                  <div class="count">29</div>
+                <ion-col size="4">
+                  <div class="count ion-text-center">29</div>
                 </ion-col>
                 <ion-col>
                   <div class="title">代言中</div>
@@ -40,10 +34,10 @@
                 </ion-col>
               </ion-row>
             </ion-col>
-            <ion-col style="padding-right: 0">
+            <ion-col>
               <ion-row class="ion-align-items-center">
-                <ion-col size="auto">
-                  <div class="count">1</div>
+                <ion-col size="4">
+                  <div class="count ion-text-center">1</div>
                 </ion-col>
                 <ion-col>
                   <div class="title">洽談中</div>
@@ -66,7 +60,7 @@
             <div><ion-icon :icon="square" style="color: var(--ion-text-color-g)" /> <span>TOP10平均</span></div>
             <div><ion-icon :icon="informationCircle" /></div>
           </div>
-          <ion-row>
+          <ion-row style="margin: 0 -5px;">
             <ion-col>
               <div class="chart">
 
@@ -106,24 +100,30 @@
           <h2>每日新發現</h2>
           <ion-row class="ion-no-padding" style="margin: 0 -5px;">
             <ion-col>
-              <ion-img src="https://placehold.co/130x130"></ion-img>
-              <div class="text">
-                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字檜木十三字', 14) }}</div>
-                <div class="price">NT.650</div>
+              <div class="item">
+                <ion-img src="https://placehold.co/130x130"></ion-img>
+                <div class="text">
+                  <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
+                  <div class="price">NT.650</div>
+                </div>
               </div>
             </ion-col>
             <ion-col>
-              <ion-img src="https://placehold.co/130x130"></ion-img>
-              <div class="text">
-                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
-                <div class="price">NT.650</div>
+              <div class="item">
+                <ion-img src="https://placehold.co/130x130"></ion-img>
+                <div class="text">
+                  <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
+                  <div class="price">NT.650</div>
+                </div>
               </div>
             </ion-col>
             <ion-col>
-              <ion-img src="https://placehold.co/130x130"></ion-img>
-              <div class="text">
-                <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
-                <div class="price">NT.650</div>
+              <div class="item">
+                <ion-img src="https://placehold.co/130x130"></ion-img>
+                <div class="text">
+                  <div class="title">{{ overReplace('獨家訂製。壓花玻璃檜木十三字', 14) }}</div>
+                  <div class="price">NT.650</div>
+                </div>
               </div>
             </ion-col>
           </ion-row>
@@ -138,11 +138,11 @@
         </ion-button>
       </ion-col>
     </ion-row>
-  </ion-content>
+  </ion-grid>
 </template>
 
 <script setup>
-import { IonContent, IonImg, IonRow, IonCol, IonIcon, IonButton, IonThumbnail } from '@ionic/vue';
+import { IonGrid, IonImg, IonRow, IonCol, IonIcon, IonButton, IonThumbnail } from '@ionic/vue';
 </script>
 <script>
 import { defineComponent } from 'vue';
@@ -160,16 +160,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
-  .bg {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-  }
   h1, h2 {
     margin-top: 0;
-    margin-bottom: 15px;
+  }
+  h1 {
+    margin-bottom: 20px;
   }
   h2 {
+    margin-bottom: 15px;
     font-size: 1.5em;
   }
   .hello span {
@@ -191,7 +189,7 @@ export default defineComponent({
   .cooperate-msg {
     background: #FFF0ED;
     border-radius: 50px;
-    padding: 8px 0;
+    padding: 4px 0;
     margin: 10px 0;
   }
   .cooperate-msg .count {
@@ -222,6 +220,7 @@ export default defineComponent({
   }
   .average .label {
     display: flex;
+    margin-bottom: 5px;
   }
   .average .label div {
     padding-right: 5px;
@@ -230,6 +229,7 @@ export default defineComponent({
     min-height: 160px;
     background: #eee;
     border-radius: 10px;
+    margin: 0 5px;
   }
   .funnel {
     min-height: 200px;
@@ -275,6 +275,12 @@ export default defineComponent({
   }
   .daily {
     margin-bottom: 20px;
+  }
+  .daily .item {
+    margin: 0 8px;
+  }
+  .daily ion-img::part(image) {
+    border-radius: 3px;
   }
   .daily h2 {
     margin-bottom: 10px;
