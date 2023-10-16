@@ -1,7 +1,7 @@
 <template>
 	<ion-grid>
 		<ion-row class="ion-justify-content-center">
-			<ion-col size="9">
+			<ion-col size="9" sizeMd="4">
 				<ion-row>
 					<ion-col class="ion-padding-vertical mT90 logo">
 						<ion-thumbnail>
@@ -32,23 +32,27 @@
 						<div class="checkbox">
 							<ion-checkbox label-placement="end">記住我的資料</ion-checkbox>
 						</div>
-						<ion-button size="small" shape="round" expand="block" class="sendbtn">登&emsp;入</ion-button>
+						<ion-button size="small" shape="round" expand="block" class="sendbtn">登入</ion-button>
 					</ion-col>
 				</ion-row>
 			</ion-col>
 		</ion-row>
-		<ion-row class="ion-padding-vertical">
-			<ion-col class="ion-align-self-center">
-        <div style="height: 0.5px;width: 100%;background: #808080;"></div>
-      </ion-col>
-			<ion-col size="auto">
-				<div style="color: #808080;">或&emsp;以其他帳號登入</div>
+		<ion-row class="ion-padding-vertical ion-justify-content-center">
+			<ion-col size="12" sizeMd="5">
+				<ion-row>
+					<ion-col class="ion-align-self-center">
+						<div style="height: 0.5px;width: 100%;background: #808080;"></div>
+					</ion-col>
+					<ion-col size="auto">
+						<div style="color: #808080;">或&emsp;以其他帳號登入</div>
+					</ion-col>
+					<ion-col></ion-col>
+				</ion-row>
 			</ion-col>
-			<ion-col></ion-col>
 		</ion-row>
 		<ion-row class="ion-justify-content-center">
-			<ion-col size="9">
-				<ion-row>
+			<ion-col size="9" sizeMd="4">
+				<ion-row class="social">
 					<ion-col>
 						<ion-thumbnail>
 							<img src="assets/icon/social/facebook.svg" />
@@ -72,12 +76,15 @@
 				</ion-row>
 			</ion-col>
 		</ion-row>
-			
 	</ion-grid>
+	<!-- register -->
+	<div id="open-modal"></div>
+	<RegisterContainer />
 </template>
 
 <script setup>
 import { IonGrid, IonRow, IonCol, IonThumbnail, IonItem, IonInput, IonButton, IonCheckbox } from '@ionic/vue';
+import RegisterContainer from '@/components/RegisterContainer.vue';
 </script>
 <style scoped>
 	ion-grid {
@@ -106,9 +113,13 @@ import { IonGrid, IonRow, IonCol, IonThumbnail, IonItem, IonInput, IonButton, Io
 	.login ion-item {
 		font-size: 1.2em;
 		--border-color: #808080;
-		margin-bottom: 10px;
 		--inner-padding-end: 0;
 		--inner-padding-bottom: 0;
+		--min-height: 40px;
+		padding-top: 10px;
+	}
+	.login ion-input {
+		min-height: 40px;
 	}
 	.passwd ion-button {
 		--color: var(--ion-text-color-r-light);
@@ -118,6 +129,7 @@ import { IonGrid, IonRow, IonCol, IonThumbnail, IonItem, IonInput, IonButton, Io
 	.checkbox {
 		display: flex;
 		justify-content: end;
+		margin-top: 10px;
 	}
 	ion-checkbox {
 		--size: 15px;
@@ -133,9 +145,14 @@ import { IonGrid, IonRow, IonCol, IonThumbnail, IonItem, IonInput, IonButton, Io
 		--background-focused: linear-gradient(90deg, var(--ion-text-color-r-dark),var(--ion-text-color-r-light),var(--ion-text-color-r-light));
 		--background-activated: linear-gradient(90deg, var(--ion-text-color-r-dark),var(--ion-text-color-r-light),var(--ion-text-color-r-light));
 		font-size: 1.4em;
+		letter-spacing: 5px;
 		--box-shadow: none;
 		margin-top: 30px;
 		--padding-top: 15px;
 		--padding-bottom: 15px;
+	}
+	.social ion-col {
+		display: flex;
+		justify-content: center;
 	}
 </style>

@@ -18,6 +18,7 @@ body {
 :root {
   /** basic **/
   --color: #494949;
+  --color-white: #fff;
   --ion-text-color: #494949;
   --ion-text-color-g: #6fbbac;
   --ion-text-color-r-light: #f17456;
