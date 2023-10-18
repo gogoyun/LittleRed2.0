@@ -1,9 +1,9 @@
 <template>
-	<ion-grid>
+	<ion-grid id="login">
 		<ion-row class="ion-justify-content-center">
 			<ion-col size="9" sizeMd="4">
 				<ion-row>
-					<ion-col class="ion-padding-vertical mT90 logo">
+					<ion-col class="ion-padding-vertical mT80 logo" @click="IORegister(0.1)">
 						<ion-thumbnail>
 							<img src='assets/icon/logo.svg' alt="小紅2.0">
 						</ion-thumbnail>
@@ -27,17 +27,17 @@
 								<img src="assets/icon/login/password_gray.svg" />
 							</ion-thumbnail>
 							<ion-input label="密&emsp;碼"></ion-input>
-							<ion-button slot="end" fill="clear">忘記密碼</ion-button>
+							<ion-button slot="end" fill="clear" class="forget hidePlace ion-hide">忘記密碼</ion-button>
 						</ion-item>
-						<div class="checkbox">
+						<div class="checkbox hidePlace ion-hide">
 							<ion-checkbox label-placement="end">記住我的資料</ion-checkbox>
 						</div>
-						<ion-button size="small" shape="round" expand="block" class="sendbtn">登入</ion-button>
+						<ion-button size="small" shape="round" expand="block" class="sendbtn hidePlace ion-hide">登入</ion-button>
 					</ion-col>
 				</ion-row>
 			</ion-col>
 		</ion-row>
-		<ion-row class="ion-padding-vertical ion-justify-content-center">
+		<ion-row class="ion-padding-vertical ion-justify-content-center hidePlace ion-hide">
 			<ion-col size="12" sizeMd="5">
 				<ion-row>
 					<ion-col class="ion-align-self-center">
@@ -50,7 +50,7 @@
 				</ion-row>
 			</ion-col>
 		</ion-row>
-		<ion-row class="ion-justify-content-center">
+		<ion-row class="ion-justify-content-center hidePlace ion-hide">
 			<ion-col size="9" sizeMd="4">
 				<ion-row class="social">
 					<ion-col>
@@ -79,12 +79,13 @@
 	</ion-grid>
 	<!-- register -->
 	<div id="open-modal"></div>
-	<RegisterContainer />
+	<RegisterContainer ref="child" />
 </template>
 
 <script setup>
 import { IonGrid, IonRow, IonCol, IonThumbnail, IonItem, IonInput, IonButton, IonCheckbox } from '@ionic/vue';
 import RegisterContainer from '@/components/RegisterContainer.vue';
+import { IORegister } from "@/utils/common.js";
 </script>
 <style scoped>
 	ion-grid {
@@ -93,8 +94,30 @@ import RegisterContainer from '@/components/RegisterContainer.vue';
 		display: flex;
 		background: #ebdcce;
 	}
-	.mT90 {
+	.mT80 {
 		margin-top: 80px;
+	}
+	.mT80Out {
+		animation: mT80Out 0.5s forwards;
+	}
+	@keyframes mT80Out {
+		0% {
+			margin-top: 80px;
+		}
+		100% {
+			margin-top: 0;
+		}
+	}
+	.mT80In {
+		animation: mT80In 0.5s forwards;
+	}
+	@keyframes mT80In {
+		0% {
+			margin-top: 0;
+		}
+		100% {
+			margin-top: 80px;
+		}
 	}
 	.logo {
 		display: flex;

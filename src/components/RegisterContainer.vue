@@ -4,18 +4,20 @@
 		trigger="open-modal"
 		:handle="false"
 		:is-open="true"
-		:initial-breakpoint="0.1"
+		:initial-breakpoint="0.5"
 		:breakpoints="[0.1, 0.5, 0.87]"
 		:backdrop-dismiss="false"
-		:backdrop-breakpoint="0.1"
+		:backdrop-breakpoint="0.87"
+		:keep-contents-mounted="true"
+		:show-backdrop="false"
 	>
-		<div class="modal">
-			<div class="top">
+		<div class="modal" id="register">
+			<div class="top" @click="IORegister(0.87)">
 				<div class="bg">
 					<ion-img src="assets/image/register_top.svg"></ion-img>
 				</div>
 				<div class="register-title">
-					<ion-button fill="clear">
+					<ion-button fill="clear" class="registerBtn ion-hide">
 						我要註冊小紅帳號&ensp;
 						<ion-thumbnail slot="end">
 							<img src="assets/icon/logo_white.svg" />
@@ -76,23 +78,23 @@
 												<img src="assets/icon/login/password.svg" />
 											</ion-thumbnail>
 											<ion-input placeholder="再次輸入密碼確認" type="password"></ion-input>
-											<ion-thumbnail slot="end">
+											<ion-thumbnail slot="end" class="ion-hide">
 												<img src="assets/icon/login/check.svg" />
 											</ion-thumbnail>
 										</ion-item>
 									</ion-col>
 								</ion-row>
-								<ion-button size="small" shape="round" expand="block" class="sendbtn">加入小紅</ion-button>
+								<ion-button size="small" shape="round" expand="block" class="sendbtn hidePlace ion-hide">加入小紅</ion-button>
 							</ion-col>
 						</ion-row>
 					</ion-col>
 				</ion-row>
 				<ion-row>
 					<ion-col>
-						<div class="agreement ion-text-center">點擊「加入小紅」即表示你已經閱讀並且同意本公司<span>【小紅條款】</span>所有的規定</div>
+						<div class="agreement ion-text-center hidePlace ion-hide">點擊「加入小紅」即表示你已經閱讀並且同意本公司<span>【小紅條款】</span>所有的規定</div>
 					</ion-col>
 				</ion-row>
-				<ion-row class="ion-padding-vertical ion-justify-content-center">
+				<ion-row class="ion-padding-vertical ion-justify-content-center hidePlace ion-hide">
 					<ion-col size="12" sizeMd="7">
 						<ion-row>
 							<ion-col class="ion-align-self-center">
@@ -107,7 +109,7 @@
 						</ion-row>
 					</ion-col>
 				</ion-row>
-				<ion-row class="ion-justify-content-center">
+				<ion-row class="ion-justify-content-center hidePlace ion-hide">
 					<ion-col size="9" sizeMd="6">
 						<ion-row class="social">
 							<ion-col>
@@ -140,10 +142,12 @@
 
 <script setup>
 import { IonGrid, IonRow, IonCol, IonImg, IonModal, IonButton, IonThumbnail, IonItem, IonInput } from '@ionic/vue';
+import { IORegister } from "@/utils/common.js";
 </script>
 <style scoped>
 	ion-modal {
 		--background: rgba(255,255,255,0);
+		--box-shadow: none;
 		--border-radius: 0;
 		color: var(--color-white);
 	}
@@ -152,7 +156,7 @@ import { IonGrid, IonRow, IonCol, IonImg, IonModal, IonButton, IonThumbnail, Ion
 	}
 	.top {
 		position: relative;
-		margin-bottom: -1px;
+		margin: 0 -2px -1px -2px;
 	}
 	.bg ion-img {
 		width: 100%;

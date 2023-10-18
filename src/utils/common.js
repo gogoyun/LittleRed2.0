@@ -6,3 +6,39 @@ export function overReplace(text, num) {
 		return text;
 	}
 }
+//ion-model breakpoints
+export function IORegister(number) {
+	const sheetModal = document.querySelector('ion-modal');
+	const logo = document.querySelector('.logo');
+	const register = document.getElementById('register');
+	const registerBtn = document.querySelector(".registerBtn");
+	const login = document.getElementById('login');
+	const grid = register.querySelector("ion-grid");
+	if(number>0.5){
+		logo.classList.add("mT80Out");
+		logo.classList.remove("mT80In");
+		register.querySelectorAll(".hidePlace").forEach(hide => {
+			hide.classList.remove('ion-hide');
+		});
+		login.querySelectorAll(".hidePlace").forEach(hide => {
+			hide.classList.add('ion-hide');
+		});
+		grid.removeAttribute("style");
+		registerBtn.classList.add("ion-hide");
+	}else{
+		logo.classList.add("mT80In");
+		logo.classList.remove("mT80Out");
+		register.querySelectorAll(".hidePlace").forEach(hide => {
+			hide.classList.add('ion-hide');
+		});
+		login.querySelectorAll(".hidePlace").forEach(hide => {
+			hide.classList.remove('ion-hide');
+		});
+		//hide SIGN UP title
+		grid.setAttribute("style","padding-top:30px");
+		//show register button
+		registerBtn.classList.remove("ion-hide");
+		
+	}
+	sheetModal.setCurrentBreakpoint(number)
+}
