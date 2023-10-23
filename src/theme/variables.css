@@ -13,6 +13,30 @@ body {
 .flex-1 {
   flex: 1;
 }
+.padding-horizontal-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/** 商品標籤 **/
+.chip {
+  display: flex;
+}
+.chip div {
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 2px 6px;
+  margin: 0 1px;
+}
+.chip .yellow {
+  background: #f7ac3b;
+}
+.chip .green {
+  background: #6fbbac;
+}
+.chip .red {
+  background: #f17456;
+}
 
 /** Ionic CSS Variables **/
 :root {
@@ -23,6 +47,7 @@ body {
   --ion-text-color-g: #6fbbac;
   --ion-text-color-r-light: #f17456;
   --ion-text-color-r-dark: #de534e;
+  --ion-text-color-purple: #4c4072;
   --ion-item-background: rgba(255, 255, 255, 0);
   --ion-font-family: "MElle HK Medium";
   --ion-font-family-bold: "MElle HKS Xbold";

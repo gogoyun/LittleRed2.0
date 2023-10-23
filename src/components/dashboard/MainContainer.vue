@@ -143,20 +143,8 @@
 
 <script setup>
 import { IonGrid, IonImg, IonRow, IonCol, IonIcon, IonButton, IonThumbnail } from '@ionic/vue';
-</script>
-<script>
-import { defineComponent } from 'vue';
 import { square, informationCircle } from 'ionicons/icons';
 import { overReplace } from "@/utils/common.js";
-export default defineComponent({
-	setup() {
-		return {
-			square,
-      informationCircle,
-      overReplace,
-		}
-	}
-})
 </script>
 
 <style scoped>

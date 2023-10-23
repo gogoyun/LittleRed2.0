@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import DashBoard from '../views/dashboard/DashBoardView.vue';
+import ProductList from '../views/dashboard/ProductListView.vue';
 import Login from '../views/LoginView.vue';
 
 const routes = [
   {
     path: '/',
     component: DashBoard,
+  },
+  {
+    path: '/product',
+    component: ProductList,
   },
   {
     path: '/login',

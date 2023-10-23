@@ -102,7 +102,7 @@ export default defineComponent({
 
 <style scoped>
 	ion-toolbar {
-		--background: rgba(255, 255, 255, 0);
+		--background: rgb(255, 255, 255);
 		box-shadow: 0px rgba(255, 255, 255, 0) !important;
 		--padding-end: 30px;
 		--min-height: 80px;
