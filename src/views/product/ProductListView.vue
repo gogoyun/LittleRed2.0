@@ -14,7 +14,7 @@
 
 <script setup>
 import { IonPage, IonContent, IonImg } from '@ionic/vue';
-import ListContainer from '@/components/dashboard/ListContainer.vue';
+import ListContainer from '@/components/product/ListContainer.vue';
 import HeaderContainer from '@/components/common/HeaderContainer.vue';
 </script>
 <style scoped>

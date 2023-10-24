@@ -20,10 +20,10 @@
 			</ion-col>
 		</ion-row>
 		<div class="scroll">
-			<ion-row class="top-slider padding-horizontal-10">
-				<ion-col>
+			<ion-row class="top-slider">
+				<ion-col class="ion-no-padding">
 					<h2>近期熱賣的商品 | TOP5</h2>
-					<div style="min-height: 180px;">slider位置</div>
+					<SwiperTop5Container />
 				</ion-col>
 			</ion-row>
 			<ion-row class="list">
@@ -84,7 +84,8 @@
 <script setup>
 import { IonGrid, IonRow, IonCol, IonItem, IonInput, IonThumbnail, IonButton, IonIcon, IonSegment, IonSegmentButton, IonLabel } from '@ionic/vue';
 import { optionsOutline } from 'ionicons/icons';
-import ProductContainer from '@/components/dashboard/ProductContainer.vue';
+import ProductContainer from '@/components/product/ProductContainer.vue';
+import SwiperTop5Container from '@/components/product/SwiperTop5Container.vue';
 </script>
 
 <style scoped>
@@ -132,9 +133,14 @@ import ProductContainer from '@/components/dashboard/ProductContainer.vue';
 		--padding-top: 10px;
 		--padding-bottom: 10px;
 	}
-	h2 {
+	.top-slider {
+		margin-bottom: 15px;
+	}
+	.top-slider h2 {
     margin-bottom: 15px;
     font-size: 1.5em;
+		padding-left: 15px;
+		padding-right: 15px;
   }
 	.scroll {
 		overflow-y: auto;

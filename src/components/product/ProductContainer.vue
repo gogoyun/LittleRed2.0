@@ -74,7 +74,7 @@ import {
   ArcElement,
 } from 'chart.js'
 import { Doughnut } from 'vue-chartjs'
-import { options } from "@/components/dashboard/doughnutConfig.js";
+import { options } from "@/components/product/doughnutConfig.js";
 ChartJS.register(ArcElement, Tooltip, Legend)
 const data = {
 	datasets: [
