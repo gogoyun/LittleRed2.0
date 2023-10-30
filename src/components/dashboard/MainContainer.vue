@@ -58,18 +58,7 @@
 						<div><ion-icon :icon="square" style="color: var(--ion-text-color-g)" /> <span>TOP10平均</span></div>
 						<div><ion-icon :icon="informationCircle" /></div>
 					</div>
-					<ion-row style="margin: 0 -5px;">
-						<ion-col>
-							<div class="chart">
-
-							</div>
-						</ion-col>
-						<ion-col>
-							<div class="chart">
-
-							</div>
-						</ion-col>
-					</ion-row>
+					<ChartContainer />
 				</div>
 			</ion-col>
 			<ion-col class="ion-no-padding ion-padding-horizontal" size="12">
@@ -118,6 +107,7 @@ import { IonGrid, IonImg, IonRow, IonCol, IonIcon, IonButton, IonThumbnail } fro
 import { square, informationCircle } from 'ionicons/icons';
 import SwiperCurrentContainer from '@/components/dashboard/SwiperCurrentContainer.vue';
 import SwiperContainer from '@/components/dashboard/SwiperContainer.vue';
+import ChartContainer from '@/components/dashboard/ChartContainer.vue';
 </script>
 
 <style scoped>
