@@ -63,7 +63,7 @@
 			</ion-col>
 			<ion-col class="ion-no-padding ion-padding-horizontal" size="12">
 				<div class="funnel">
-					銷售漏斗位置
+					<ChartLineContainer />
 				</div>
 			</ion-col>
 			<ion-col class="ion-no-padding ion-padding-horizontal" size="12">
@@ -108,6 +108,7 @@ import { square, informationCircle } from 'ionicons/icons';
 import SwiperCurrentContainer from '@/components/dashboard/SwiperCurrentContainer.vue';
 import SwiperContainer from '@/components/dashboard/SwiperContainer.vue';
 import ChartContainer from '@/components/dashboard/ChartContainer.vue';
+import ChartLineContainer from '@/components/dashboard/ChartLineContainer.vue';
 </script>
 
 <style scoped>
@@ -186,7 +187,6 @@ import ChartContainer from '@/components/dashboard/ChartContainer.vue';
 		margin: 0 5px;
 	}
 	.funnel {
-		min-height: 200px;
 		margin: 10px 0;
 		border: 1px solid #eee;
 		border-radius: 10px;
