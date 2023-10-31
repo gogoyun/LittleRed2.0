@@ -8,33 +8,27 @@ export const overlapDlice = [{
     })
     
   },
-  // beforeRender(chart) {
-  //   console.log(chart);
-  // },
-  // afterDraw(chart) {
-  //   console.log(chart);
-  // }
 }];
 export const options = {
   responsive: false,
   maintainAspectRatio: false,
   plugins: {
     legend: false,
-    tooltip: {
-      enabled: true,
-      caretPadding: 30,
-      xAlign: 'center',
-      yAlign: 'bottom',
+    tooltip: false,
+    datalabels: {
+      color: '#fff',
+      align: 'top',
+      anchor: 'end',
+      offset: 40,
+      clamp: true,
       backgroundColor: '#6fbbac',
-      displayColors: false,
-      bodyFont: {
-        size: 23
+      borderRadius: 6,
+      font: {
+        size: 23,
       },
-      callbacks: {
-        label: function(tooltipItem) {
-          return tooltipItem.formattedValue+'%';
-        },
-      },
+      formatter: function(value) {
+        return value + '%';
+      }
     }
   },
   cutout: "70%",
