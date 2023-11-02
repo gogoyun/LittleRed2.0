@@ -38,6 +38,16 @@ body {
 .chip .red {
   background: #f17456;
 }
+/** 商品價格 **/
+.price-price-block {
+  display: flex;
+}
+.price-price-block .price, .price-price-block .sale {
+  color: var(--ion-text-color-r-dark);
+  font-size: 0.7rem;
+  font-family: var(--ion-font-family-number);
+  margin-right: 5px;
+}
 
 /** Ionic CSS Variables **/
 :root {

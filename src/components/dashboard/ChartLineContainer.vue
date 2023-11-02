@@ -25,9 +25,9 @@
 		</div>
 	</div>
 	<div class="bottom">
-		<div><span class="number" style="color: #f17456;">129,456</span><span class="title"> 瀏覽數</span></div>
-		<div><span class="number" style="color: #ff9933;">30,422</span><span class="title"> 點擊數</span></div>
-		<div><span class="number" style="color: #ffa800;">1,923</span><span class="title"> 購買數</span></div>
+		<div><span class="value" style="color: #f17456;">129,456</span><span class="title"> 瀏覽數</span></div>
+		<div><span class="value" style="color: #ff9933;">30,422</span><span class="title"> 點擊數</span></div>
+		<div><span class="value" style="color: #ffa800;">1,923</span><span class="title"> 購買數</span></div>
 	</div>
 </template>
 
@@ -145,7 +145,7 @@ const data = {
 	.bottom div {
 		width: 100%;
 	}
-	.bottom .number {
+	.bottom .value {
 		font-family: var(--ion-font-family-number);
 		font-weight: bold;
 		font-size: 1.3em;

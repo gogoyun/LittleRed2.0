@@ -8,7 +8,7 @@
 				</div>
 				<ion-label>
 					<div class="title ion-text-wrap hide-line">獨家訂製。壓花玻璃檜木淺盤/飾品收納盤獨家訂製。壓花玻璃檜木淺盤/飾品收納盤</div>
-					<div class="item-mid-center">
+					<div class="price-price-block">
 						<div class="price">NT.12,399</div><div class="sale">33% OFF</div>
 					</div>
 					<div class="profit-title">可分潤金額 / 筆</div>
@@ -30,7 +30,7 @@
 				</div>
 				<ion-label>
 					<div class="title ion-text-wrap hide-line">獨家訂製。壓花玻璃檜木淺盤/飾品收納盤獨家訂製。壓花玻璃檜木淺盤/飾品收納盤</div>
-					<div class="item-mid-center">
+					<div class="price-price-block">
 						<div class="price" style="color: var(--ion-text-color);">NT.650</div>
 					</div>
 					<div class="profit-title">可分潤金額 / 筆</div>
@@ -47,7 +47,7 @@
 				</div>
 				<ion-label>
 					<div class="title ion-text-wrap hide-line">獨家訂製。壓花玻璃檜木淺盤/飾品收納盤獨家訂製。壓花玻璃檜木淺盤/飾品收納盤</div>
-					<div class="item-mid-center">
+					<div class="price-price-block">
 						<div class="price">NT.12,399</div><div class="sale">33% OFF</div>
 					</div>
 					<div class="profit-title">可分潤金額 / 筆</div>
@@ -144,15 +144,6 @@ const dataGreen = {
 		display: -webkit-box;
 		-webkit-line-clamp: 1;
 		-webkit-box-orient: vertical;
-	}
-	.item-mid-center {
-		display: flex;
-	}
-	ion-item .price, ion-item .sale {
-		color: var(--ion-text-color-r-dark);
-		font-size: 0.7em;
-		font-family: var(--ion-font-family-number);
-		margin-right: 5px;
 	}
 	ion-item .profit-title {
 		font-size: 0.7em;
