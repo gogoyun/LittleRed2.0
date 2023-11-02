@@ -50,13 +50,16 @@
 	<!-- button  -->
 	<div class="fixed-bottom">
 		<ion-button size="small" shape="round" class="endorsBtn">我要洽談</ion-button>
-		<ion-button size="small" shape="round" class="shareBtn">我要代言</ion-button>
+		<ion-button size="small" shape="round" class="shareBtn" id="share-modal">我要代言</ion-button>
 	</div>
+	<!-- 我要代言 -->
+	<ShareModalContainer />
 </template>
 
 <script setup>
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/vue';
 import ChartContainer from '@/components/product/ChartContainer.vue';
+import ShareModalContainer from '@/components/product/ShareModalContainer.vue';
 </script>
 
 <style scoped>

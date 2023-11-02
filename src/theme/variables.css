@@ -48,6 +48,12 @@ body {
   font-family: var(--ion-font-family-number);
   margin-right: 5px;
 }
+/** share modal **/
+.share-modal .textarea-label-placement-floating.sc-ion-textarea-ios-h textarea.sc-ion-textarea-ios, .share-modal .textarea-label-placement-floating.sc-ion-textarea-md-h textarea.sc-ion-textarea-md {
+  margin-top: 12px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
 
 /** Ionic CSS Variables **/
 :root {
