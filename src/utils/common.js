@@ -1,3 +1,4 @@
+import { ref } from 'vue';
 //文字過長替換...
 export function overReplace(text, num) {
 	if(text.length>num){
@@ -41,4 +42,11 @@ export function IORegister(number) {
 		
 	}
 	sheetModal.setCurrentBreakpoint(number)
+}
+// share modal open status
+export const isOpen = ref(false);
+export const isOpenElse = ref(false);
+export const setOpen = (target, bool) => {
+	if(target=='isOpen') isOpen.value = bool;
+	if(target=='isOpenElse') isOpenElse.value = bool;
 }

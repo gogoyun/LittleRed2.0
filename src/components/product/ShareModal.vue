@@ -1,13 +1,13 @@
 <template>
 	<ion-modal
 		ref="modal"
-		trigger="share-modal"
 		:initial-breakpoint="1"
 		:breakpoints="[0, 1]"
 		:handle="false"
-		:is-open="true"
+		:is-open="isOpen"
+		@ionModalDidDismiss="setOpen('isOpen', false)"
 	>
-    <div class="modal share-modal">
+		<div class="modal share-modal">
 			<ion-grid>
 				<ion-row class="ion-padding">
 					<ion-col>
@@ -30,7 +30,7 @@
 								<swiper-slide>
 									<div class="swiper-list ion-align-items-center">
 										<ion-thumbnail>
-											<img src="assets/icon/social/facebook.svg" />
+											<img src="assets/icon/social/product/facebook.svg" />
 										</ion-thumbnail>
 										<div class="text ion-text-center">Facebook</div>
 									</div>
@@ -38,7 +38,7 @@
 								<swiper-slide>
 									<div class="swiper-list ion-align-items-center">
 										<ion-thumbnail>
-											<img src="assets/icon/social/instagram.svg" />
+											<img src="assets/icon/social/product/instagram.svg" />
 										</ion-thumbnail>
 										<div class="text ion-text-center">Instagram</div>
 									</div>
@@ -46,7 +46,7 @@
 								<swiper-slide>
 									<div class="swiper-list ion-align-items-center">
 										<ion-thumbnail>
-											<img src="assets/icon/social/line.svg" />
+											<img src="assets/icon/social/product/line.svg" />
 										</ion-thumbnail>
 										<div class="text ion-text-center">Line</div>
 									</div>
@@ -54,7 +54,7 @@
 								<swiper-slide>
 									<div class="swiper-list ion-align-items-center">
 										<ion-thumbnail>
-											<img src="assets/icon/social/facebook.svg" />
+											<img src="assets/icon/social/product/sms.svg" />
 										</ion-thumbnail>
 										<div class="text ion-text-center">簡訊</div>
 									</div>
@@ -62,7 +62,7 @@
 								<swiper-slide>
 									<div class="swiper-list ion-align-items-center">
 										<ion-thumbnail>
-											<img src="assets/icon/social/facebook.svg" />
+											<img src="assets/icon/social/product/more.svg" />
 										</ion-thumbnail>
 										<div class="text ion-text-center">更多</div>
 									</div>
@@ -74,7 +74,7 @@
 				<ion-row style="margin: 0 -5px -5px;">
 					<ion-col class="ion-no-padding">
 						<ion-list>
-							<ion-item href="#" lines="none" button detail="true">
+							<ion-item lines="none" button detail="true" @click="setOpen('isOpenElse', true)">
 								<ion-label>或 取得購買連結・按鈕</ion-label>
 							</ion-item>
 						</ion-list>
@@ -82,16 +82,21 @@
 				</ion-row>
 			</ion-grid>
 		</div>
-  </ion-modal>
+	</ion-modal>
+	<!-- 我要代言 -->
+	<ShareElse />
 </template>
 
 <script setup>
-import { IonGrid, IonRow, IonCol, IonModal, IonTextarea, IonThumbnail, IonList, IonItem, IonLabel } from '@ionic/vue';
+import { IonGrid, IonRow, IonCol, IonTextarea, IonThumbnail, IonList, IonItem, IonLabel, IonModal } from '@ionic/vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 // Import Swiper styles
 import "swiper/css";
 import '@/theme/swiper.css';
+// import modal
+import ShareElse from "./ShareElseModal.vue";
+import { isOpen, setOpen } from '@/utils/common.js';
 </script>
 <style scoped>
 	ion-modal {
@@ -128,11 +133,11 @@ import '@/theme/swiper.css';
 		width: 100%;
 	}
 	ion-item {
-		font-size: 1.6em;
+		font-size: 1.5em;
 		--background: #eee;
 		--detail-icon-font-size: 1.6em;
-		--inner-padding-top: 10px;
-		--inner-padding-bottom: 10px;
+		--inner-padding-top: 5px;
+		--inner-padding-bottom: 5px;
 		--inner-padding-start: 10px;
 		--inner-padding-end: 20px;
 	}
