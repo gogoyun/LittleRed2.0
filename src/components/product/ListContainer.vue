@@ -13,10 +13,19 @@
 				</ion-item>
 			</ion-col>
 			<ion-col size="auto">
-				<ion-button size="small" shape="round" class="filter">
+				<ion-button size="small" shape="round" class="filter" id="filter-modal">
 					篩選&ensp;
 					<ion-icon :icon="optionsOutline" style="color:#fff" />
 				</ion-button>
+				<ion-modal
+					ref="modal"
+					trigger="filter-modal"
+					:initial-breakpoint="1"
+					:breakpoints="[0, 1]"
+					:handle="false"
+				>
+					<FilterModal />
+				</ion-modal>
 			</ion-col>
 		</ion-row>
 		<div class="scroll">
@@ -82,10 +91,11 @@
 </template>
 
 <script setup>
-import { IonGrid, IonRow, IonCol, IonItem, IonInput, IonThumbnail, IonButton, IonIcon, IonSegment, IonSegmentButton, IonLabel } from '@ionic/vue';
+import { IonGrid, IonRow, IonCol, IonItem, IonInput, IonThumbnail, IonButton, IonIcon, IonSegment, IonSegmentButton, IonLabel, IonModal } from '@ionic/vue';
 import { optionsOutline } from 'ionicons/icons';
 import ProductContainer from '@/components/product/ProductContainer.vue';
 import SwiperTop5Container from '@/components/product/SwiperTop5Container.vue';
+import FilterModal from './FilterModal.vue';
 </script>
 
 <style scoped>
@@ -133,6 +143,10 @@ import SwiperTop5Container from '@/components/product/SwiperTop5Container.vue';
 		--padding-top: 10px;
 		--padding-bottom: 10px;
 	}
+	ion-modal {
+		--height: auto;
+		--border-radius: 0;
+	}
 	.top-slider {
 		margin-bottom: 15px;
 	}
@@ -159,11 +173,11 @@ import SwiperTop5Container from '@/components/product/SwiperTop5Container.vue';
 	.tabs, .sort {
 		background: #eee;
 	}
-	ion-segment {
+	.list-bar ion-segment {
 		--background: rgba(0, 0, 0, 0);
 		border-radius: 0;
 	}
-	ion-segment-button {
+	.list-bar ion-segment-button {
 		color: #808080;
 		--border-radius: 0;
     --indicator-color: rgba(0, 0, 0, 0);
@@ -173,10 +187,10 @@ import SwiperTop5Container from '@/components/product/SwiperTop5Container.vue';
 		margin-top: 0;
 		margin-bottom: 0;
   }
-	ion-segment-button::before {
+	.list-bar ion-segment-button::before {
 		border: none;
 	}
-	ion-segment-button::part(indicator) {
+	.list-bar ion-segment-button::part(indicator) {
 		border-bottom: 5px solid var(--ion-text-color-r-dark);
 	}
 	.segment-button-checked {

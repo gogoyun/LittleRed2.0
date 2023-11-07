@@ -1,5 +1,34 @@
 <template>
-	<ion-modal ref="modal" trigger="menu-modal" :initial-breakpoint="1" :breakpoints="[0, 1]">
+	<ion-header class="ion-no-border">
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<ion-button id="menu-modal" expand="block">
+					<ion-icon :icon="menuOutline" />
+				</ion-button>
+			</ion-buttons>
+			<ion-buttons>
+				<ion-button>
+					<ion-avatar>
+						<ion-img src='assets/icon/logo.svg' alt="小紅2.0"></ion-img>
+					</ion-avatar>
+				</ion-button>
+			</ion-buttons>
+			<ion-buttons slot="end">
+				<ion-button>
+					<ion-avatar>
+						<ion-img src='assets/icon/avatar.jpg'></ion-img>
+					</ion-avatar>
+				</ion-button>
+			</ion-buttons>
+		</ion-toolbar>
+	</ion-header>
+	<ion-modal
+		ref="modal"
+		trigger="menu-modal"
+		:initial-breakpoint="1"
+		:breakpoints="[0, 1]"
+		:handle="false"
+	>
     <div class="modal ion-padding">
 			<ion-grid>
 				<ion-row class="flex-1">
@@ -58,31 +87,8 @@
 				</ion-row>
 			</ion-grid>
 		</div>
-		<div class="menu-border"></div>
+		<div class="red-border"></div>
   </ion-modal>
-	<ion-header class="ion-no-border">
-		<ion-toolbar>
-			<ion-buttons slot="start">
-				<ion-button id="menu-modal" expand="block">
-					<ion-icon :icon="menuOutline" />
-				</ion-button>
-			</ion-buttons>
-			<ion-buttons>
-				<ion-button>
-					<ion-avatar>
-						<ion-img src='assets/icon/logo.svg' alt="小紅2.0"></ion-img>
-					</ion-avatar>
-				</ion-button>
-			</ion-buttons>
-			<ion-buttons slot="end">
-				<ion-button>
-					<ion-avatar>
-						<ion-img src='assets/icon/avatar.jpg'></ion-img>
-					</ion-avatar>
-				</ion-button>
-			</ion-buttons>
-		</ion-toolbar>
-	</ion-header>
 </template>
 
 <script setup>
@@ -109,6 +115,7 @@ export default defineComponent({
 	}
 	ion-modal {
 		--height: auto;
+		--border-radius: 0;
 	}
 	.modal {
 		background-color: #ececec;
@@ -170,9 +177,5 @@ export default defineComponent({
     --background-focused: var(--ion-text-color-g);
 		--background-activated: var(--ion-text-color-g);
 		--padding-bottom: 5px;
-	}
-	.menu-border {
-		background-color: #E1524E;
-		height: 5px;
 	}
 </style>
