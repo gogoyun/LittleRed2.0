@@ -93,17 +93,7 @@
 
 <script setup>
 import { IonHeader, IonToolbar, IonGrid, IonRow, IonCol, IonButtons, IonButton, IonIcon, IonModal, IonAvatar, IonImg, IonList, IonItem, IonLabel, IonBadge } from '@ionic/vue';
-</script>
-<script>
-import { defineComponent } from 'vue';
 import { menuOutline } from 'ionicons/icons';
-export default defineComponent({
-	setup() {
-		return {
-			menuOutline
-		}
-	}
-})
 </script>
 
 <style scoped>
