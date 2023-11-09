@@ -116,7 +116,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { IonGrid, IonRow, IonCol, IonTextarea, IonThumbnail, IonList, IonItem, IonLabel, IonModal } from '@ionic/vue';
+import { IonGrid, IonRow, IonCol, IonTextarea, IonThumbnail, IonList, IonItem, IonLabel, IonModal, IonIcon, IonButton } from '@ionic/vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 // Import Swiper styles
@@ -127,7 +127,7 @@ import ShareElse from "./ShareElseModal.vue";
 import { isOpen, setOpen } from '@/utils/common.js';
 //not ready
 import { alertCircleOutline } from 'ionicons/icons';
-const notReady = ref(false);
+const notReady = ref(true);
 </script>
 <style scoped>
 	ion-modal {

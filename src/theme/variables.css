@@ -154,3 +154,7 @@ body {
 .login .input-label-placement-start.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios, .login .input-label-placement-start.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md {
   margin-inline-end: 10px;
 }
+/** first setting **/
+.welcome .sc-ion-input-ios-h:not(.legacy-input) {
+  min-height: 30px;
+}

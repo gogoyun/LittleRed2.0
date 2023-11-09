@@ -3,6 +3,7 @@ import DashBoard from '../views/dashboard/DashBoardView.vue';
 import ProductList from '../views/product/ProductListView.vue';
 import ProductInfo from '../views/product/ProductInfoView.vue';
 import Login from '../views/LoginView.vue';
+import FirstSetting from '../views/account/FirstSettingView.vue';
 
 const routes = [
   {
@@ -20,7 +21,11 @@ const routes = [
   {
     path: '/login',
     component: Login,
-  }
+  },
+  {
+    path: '/firstSetting',
+    component: FirstSetting,
+  },
 ]
 
 const router = createRouter({

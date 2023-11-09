@@ -19,3 +19,17 @@
   width: 18px;
   height: 5px;
 }
+/* first setting */
+.nestSwiper.swiper {
+  --swiper-pagination-bullet-width: 8px;
+  --swiper-pagination-bullet-height: 8px;
+}
+.nestSwiper .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.nestSwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 3px;
+}
+.nestSwiper .swiper-pagination-bullet-active {
+  background: var(--color);
+  width: 30px;
+  height: 8px;
+}
