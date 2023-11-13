@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import DashBoard from '../views/dashboard/DashBoardView.vue';
 import ProductList from '../views/product/ProductListView.vue';
 import ProductInfo from '../views/product/ProductInfoView.vue';
+import EndorseList from '../views/endorse/EndorseListView.vue';
 import Login from '../views/LoginView.vue';
 import FirstSetting from '../views/account/FirstSettingView.vue';
 
@@ -17,6 +18,10 @@ const routes = [
   {
     path: '/product/info/:id?',
     component: ProductInfo,
+  },
+  {
+    path: '/endorse',
+    component: EndorseList,
   },
   {
     path: '/login',

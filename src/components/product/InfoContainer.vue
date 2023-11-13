@@ -49,7 +49,7 @@
   </ion-grid>
 	<!-- button  -->
 	<div class="fixed-bottom">
-		<ion-button size="small" shape="round" class="endorsBtn">我要洽談</ion-button>
+		<ion-button size="small" shape="round" class="endorseBtn">我要洽談</ion-button>
 		<ion-button size="small" shape="round" class="shareBtn" @click="setOpen('isOpen', true)">我要代言</ion-button>
 	</div>
 	<!-- 我要代言 -->
@@ -157,7 +157,7 @@ h1 {
 	margin-inline-start: 4px;
 	margin-inline-end: 4px;
 }
-.endorsBtn {
+.endorseBtn {
 	--background: var(--ion-text-color-purple);
 	--background-hover: var(--ion-text-color-purple);
 	--background-focused: var(--ion-text-color-purple);

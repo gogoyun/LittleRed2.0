@@ -94,11 +94,14 @@
 <script setup>
 import { IonHeader, IonToolbar, IonGrid, IonRow, IonCol, IonButtons, IonButton, IonIcon, IonModal, IonAvatar, IonImg, IonList, IonItem, IonLabel, IonBadge } from '@ionic/vue';
 import { menuOutline } from 'ionicons/icons';
+const props = defineProps({
+  opacity: { type: Number, default: 1 }
+})
 </script>
 
 <style scoped>
 	ion-toolbar {
-		--background: rgb(255, 255, 255);
+		--background: rgba(255, 255, 255, v-bind(props.opacity));
 		box-shadow: 0px rgba(255, 255, 255, 0) !important;
 		--padding-end: 30px;
 		--min-height: 80px;

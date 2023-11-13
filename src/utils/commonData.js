@@ -38,4 +38,5 @@ export const interestData = [
 	{image: '03-03-15.svg', title: '戶外運動'},
 	{image: '03-03-16.svg', title: '圖書影音'},
 	{image: '03-03-17.svg', title: '票券服務'},
+	{image: '03-03-18.svg', title: '其他商品'},
 ];

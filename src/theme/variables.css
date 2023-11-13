@@ -46,6 +46,12 @@ body {
 .chip .red {
   background: #f17456;
 }
+.chip .red-gradient {
+  background: linear-gradient(90deg, #f17456, #de534e 50%);
+}
+.chip .gray {
+  background: #808080;
+}
 /** 商品價格 **/
 .price-price-block {
   display: flex;
