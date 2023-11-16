@@ -5,10 +5,11 @@ http://ionicframework.com/docs/theming/ */
 @import url(https://db.onlinewebfonts.com/c/887bf037e9cf41f0ab02c38fe9d94341?family=MElle+HK+Medium);
 @import url(https://db.onlinewebfonts.com/c/ea5c514cbb95af4be128bb9cd5dc1101?family=MElle+HKS+Xbold);
 @import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
 
 /** basic **/
 body {
-  font-size: 12px;
+  font-size: clamp(10px, calc(10px + (12 - 8)*(100vw - 320px)/(768 - 320)), 12px);
 }
 .flex-1 {
   flex: 1;
@@ -24,6 +25,14 @@ body {
 .red-border {
   background-color: #E1524E;
   height: 4px;
+}
+.horizental-line {
+  padding: 5px 0 10px;
+}
+.gray-border {
+  background-color: #494949;
+  height: 1px;
+  width: 100%;
 }
 /** 商品標籤 **/
 .chip {
@@ -83,6 +92,7 @@ body {
   --ion-font-family: "MElle HK Medium";
   --ion-font-family-bold: "MElle HKS Xbold";
   --ion-font-family-number: "Albert Sans";
+  --ion-font-family-score: 'Arya';
   
   /** primary **/
   --ion-color-primary: #494949;

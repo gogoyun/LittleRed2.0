@@ -60,7 +60,7 @@
 import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/vue';
 import ChartContainer from '@/components/product/ChartContainer.vue';
 // import modal
-import ShareModal from './ShareModal.vue';
+import ShareModal from '@/components/common/ShareModal.vue';
 import { setOpen } from '@/utils/common.js';
 </script>
 

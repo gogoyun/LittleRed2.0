@@ -57,7 +57,7 @@
 							<div class="title ion-text-wrap hide-line">獨家訂製。物理抗菌雙層便當盒</div>
 							<div class="sku">ABC002</div>
 						</div>
-						<div class="item-right copy">
+						<div class="item-right copy" @click="setOpen('isOpen', true)">
 							<div class="image">
 								<ion-icon :icon="copyOutline" />
 							</div>
@@ -150,12 +150,16 @@
 			<ion-infinite-scroll-content></ion-infinite-scroll-content>
 		</ion-infinite-scroll>
 	</ion-row>
+	<ShareModal ref="setOpenFun" />
 </template>
 
 <script setup>
-import { IonRow, IonItem, IonImg, IonLabel, IonList, IonIcon, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/vue';
+import { IonRow, IonCol, IonItem, IonImg, IonLabel, IonList, IonIcon, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/vue';
 import { copyOutline, radioButtonOnOutline } from 'ionicons/icons';
 const trangleH = '8px';
+// import modal
+import ShareModal from '@/components/common/ShareModal.vue';
+import { setOpen } from '@/utils/common.js';
 </script>
 
 <style scoped>
@@ -326,18 +330,11 @@ const trangleH = '8px';
 	.value {
 		color: var(--ion-text-color-r-dark);
 		font-size: 1.2em;
+		font-family: var(--ion-font-family-number);
 	}
 	.unit {
 		color: var(--ion-text-color-r-dark);
 		font-size: 0.6em;
 		padding: 2px 2px 0 0;
-	}
-	.horizental-line {
-		padding: 5px 0 10px;
-	}
-	.gray-border {
-		background-color: #494949;
-		height: 1px;
-		width: 100%;
 	}
 </style>
