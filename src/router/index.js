@@ -3,6 +3,7 @@ import DashBoard from '../views/dashboard/DashBoardView.vue';
 import ProductList from '../views/product/ProductListView.vue';
 import ProductInfo from '../views/product/ProductInfoView.vue';
 import EndorseList from '../views/endorse/EndorseListView.vue';
+import Center from '../views/center/CenterView.vue';
 import Login from '../views/LoginView.vue';
 import FirstSetting from '../views/account/FirstSettingView.vue';
 
@@ -22,6 +23,10 @@ const routes = [
   {
     path: '/endorse',
     component: EndorseList,
+  },
+  {
+    path: '/center',
+    component: Center,
   },
   {
     path: '/login',

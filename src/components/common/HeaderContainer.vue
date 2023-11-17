@@ -3,19 +3,20 @@
 		<ion-toolbar>
 			<ion-buttons slot="start">
 				<ion-button id="menu-modal" expand="block">
-					<ion-icon :icon="menuOutline" />
+					<ion-icon :icon="menuOutline" :class="menuColor" />
 				</ion-button>
 			</ion-buttons>
 			<ion-buttons>
 				<ion-button>
-					<ion-avatar>
-						<ion-img src='assets/icon/logo.svg' alt="小紅2.0"></ion-img>
+					<ion-avatar class="logo">
+						<ion-img :class="`mainLogo ${changeLogo}`" :src='`assets/icon/logo.svg`' alt="小紅2.0"></ion-img>
+						<ion-img :class="`mainLogoWhite ${changeLogo}`" :src='`assets/icon/logo_white.svg`' alt="小紅2.0"></ion-img>
 					</ion-avatar>
 				</ion-button>
 			</ion-buttons>
 			<ion-buttons slot="end">
-				<ion-button>
-					<ion-avatar>
+				<ion-button :style="avatarClick">
+					<ion-avatar :class="avatarHide">
 						<ion-img src='assets/icon/avatar.jpg'></ion-img>
 					</ion-avatar>
 				</ion-button>
@@ -95,7 +96,11 @@
 import { IonHeader, IonToolbar, IonGrid, IonRow, IonCol, IonButtons, IonButton, IonIcon, IonModal, IonAvatar, IonImg, IonList, IonItem, IonLabel, IonBadge } from '@ionic/vue';
 import { menuOutline } from 'ionicons/icons';
 const props = defineProps({
-  opacity: { type: Number, default: 1 }
+  opacity: { type: Number, default: 1 },
+	menuColor: { type: String, default: '' },
+	avatarHide: { type: String, default: '' },
+	changeLogo: { type: String, default: '' },
+	avatarClick: { type: Object, default() { return { display: 'none' } } }
 })
 </script>
 
@@ -119,6 +124,47 @@ const props = defineProps({
 		flex-direction:column;
 		display: flex;
 	}
+	ion-header #menu-modal ion-icon.white {
+		animation: changeWhite 0.5s ease-in-out forwards;
+	}
+		@keyframes changeWhite {
+			0% {
+				color: var(--color);
+			}
+			100% {
+				color: var(--color-white);
+			}
+		}
+	ion-header .logo {
+		position: relative;
+	}
+	ion-img.mainLogo.changeLogo {
+		animation: logoHide 0.5s ease-in-out forwards;
+	}
+		@keyframes logoHide {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	ion-img.mainLogoWhite {
+		position: absolute;
+		top: 0;
+		opacity: 0;
+	}
+	ion-img.mainLogoWhite.changeLogo {
+		animation: logoShow 0.5s ease-in-out forwards;
+	}
+		@keyframes logoShow {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
 	#menu ion-list {
 		margin: 8px 0;
 	}
