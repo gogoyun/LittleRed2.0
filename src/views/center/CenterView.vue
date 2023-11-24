@@ -44,6 +44,14 @@
 		hide.value = 'ion-hide';
 		changeLogo.value = 'changeLogo';
 	}
+	const cssChangeBack = () => {
+		menuColor.value = '';
+		bgStyle.value = '';
+		avatarStyle.value = '';
+		avatarClick.value = {display: 'none'}
+		hide.value = '';
+		changeLogo.value = '';
+	}
 	onMounted(() => {
 		let items = document.querySelector('ion-content');
 		let isActive = false
@@ -66,8 +74,10 @@
 			let move = moveafter - startX //實際要移動的量
 			//滑鼠移動後的位置-剛開始的位置(startX)= 卷軸移動的距離
 			const target = locationNow - move;
-			//移動超過10則轉至第二頁
+			//向右移動超過10，轉至第二頁
 			if(target> 10){cssChange()}
+			//向左移動超過10，轉回第一頁
+			if(target< -10){cssChangeBack()}
 		})
 	});
 	</script>

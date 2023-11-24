@@ -72,7 +72,7 @@ import { IonGrid, IonRow, IonCol, IonThumbnail } from '@ionic/vue';
 		justify-content: center;
 		align-items: center;
 	}
-	ion-thumbnail {
+	.whiteBg ion-thumbnail {
 		--size: 3.2em;
 	}
 </style>
