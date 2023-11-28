@@ -14,7 +14,8 @@
 					</div>
 				</div>
 				<div :class="`transform ${ bgStyle }`">
-					<CenterContainer />
+					<CenterContainer v-if="showLayer==1" />
+					<SwiperContainer v-if="showLayer==2" />
 				</div>
 			</ion-content>
 		</ion-page>
@@ -25,7 +26,9 @@
 	import { IonPage, IonContent, IonImg, IonThumbnail } from '@ionic/vue';
 	import SocialConteiner from '@/components/center/SocialConteiner.vue';
 	import CenterContainer from '@/components/center/CenterContainer.vue';
+	import SwiperContainer from '@/components/center/SwiperContainer.vue';
 	import HeaderContainer from '@/components/common/HeaderContainer.vue';
+	const showLayer = ref(1);
 	const avatarHide = 'ion-hide';
 	const avatarClick = reactive({display: 'none'});
 	const menuColor = ref('');
@@ -34,6 +37,7 @@
 	const hide = ref('');
 	const changeLogo = ref('');
 	const cssChange = () => {
+		showLayer.value = 2;
 		menuColor.value = 'white';
 		bgStyle.value = 'toFull';
 		avatarStyle.value = 'toHeader';
@@ -45,6 +49,7 @@
 		changeLogo.value = 'changeLogo';
 	}
 	const cssChangeBack = () => {
+		showLayer.value = 1;
 		menuColor.value = '';
 		bgStyle.value = '';
 		avatarStyle.value = '';
