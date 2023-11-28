@@ -23,9 +23,13 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* highchart */
+import HighchartsVue from 'highcharts-vue';
+
 const app = createApp(App)
   .use(IonicVue)
-  .use(router);
+  .use(router)
+  .use(HighchartsVue);
   
 router.isReady().then(() => {
   app.mount('#app');

@@ -4,7 +4,6 @@
 			:modules="modules"
 			:pagination="pagination"
 			class="centerSwiper"
-			:initialSlide="1"
 		>
 			<swiper-slide>
 				<div class="swiper-list">
