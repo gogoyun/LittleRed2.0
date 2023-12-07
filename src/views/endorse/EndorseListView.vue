@@ -4,7 +4,7 @@
     <ion-content :fullscreen="true" scroll-y="false">
       <div class="bg">
         <ion-img
-          src="https://placehold.co/400x700"
+          src="assets/image/endorse_bg.svg"
         ></ion-img>
       </div>
       <ListContainer />
