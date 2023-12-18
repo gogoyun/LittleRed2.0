@@ -100,7 +100,7 @@ const props = defineProps({
 	menuColor: { type: String, default: '' },
 	avatarHide: { type: String, default: '' },
 	changeLogo: { type: String, default: '' },
-	avatarClick: { type: Object, default() { return { display: 'none' } } }
+	avatarClick: { type: Object, default() { return { display: 'block' } } }
 })
 </script>
 

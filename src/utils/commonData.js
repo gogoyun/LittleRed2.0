@@ -40,3 +40,26 @@ export const interestData = [
 	{image: '03-03-17.svg', title: '票券服務'},
 	{image: '03-03-18.svg', title: '其他商品'},
 ];
+export const cityTW = [
+	{ id: "台北市",	text:	"台北市" },
+	{ id: "新北市",	text:	"新北市" },
+	{ id: "基隆市",	text:	"基隆市" },
+	{ id: "宜蘭縣",	text:	"宜蘭縣" },
+	{ id: "新竹市",	text:	"新竹市" },
+	{ id: "新竹縣",	text:	"新竹縣" },
+	{ id: "桃園市",	text:	"桃園市" },
+	{ id: "苗栗縣",	text:	"苗栗縣" },
+	{ id: "台中市",	text:	"台中市" },
+	{ id: "彰化縣",	text:	"彰化縣" },
+	{ id: "南投縣",	text:	"南投縣" },
+	{ id: "雲林縣",	text:	"雲林縣" },
+	{ id: "嘉義市",	text:	"嘉義市" },
+	{ id: "嘉義縣",	text:	"嘉義縣" },
+	{ id: "台南市",	text:	"台南市" },
+	{ id: "高雄市",	text:	"高雄市" },
+	{ id: "屏東縣",	text:	"屏東縣" },
+	{ id: "花蓮縣",	text:	"花蓮縣" },
+	{ id: "澎湖縣",	text:	"澎湖縣" },
+	{ id: "金門縣",	text:	"金門縣" },
+	{ id: "連江縣",	text:	"連江縣" }
+]

@@ -6,6 +6,7 @@ import EndorseList from '../views/endorse/EndorseListView.vue';
 import Center from '../views/center/CenterView.vue';
 import Login from '../views/LoginView.vue';
 import FirstSetting from '../views/account/FirstSettingView.vue';
+import Account from '../views/account/AccountView.vue';
 
 const routes = [
   {
@@ -31,6 +32,10 @@ const routes = [
   {
     path: '/login',
     component: Login,
+  },
+  {
+    path: '/account',
+    component: Account,
   },
   {
     path: '/firstSetting',

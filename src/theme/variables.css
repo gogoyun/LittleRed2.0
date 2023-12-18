@@ -9,7 +9,7 @@ http://ionicframework.com/docs/theming/ */
 
 /** basic **/
 body {
-  font-size: clamp(10px, calc(10px + (12 - 8)*(100vw - 320px)/(768 - 320)), 12px);
+  font-size: clamp(10px, calc(10px + (12 - 8)*(100vw - 375px)/(768 - 375)), 12px);
 }
 .flex-1 {
   flex: 1;
@@ -172,5 +172,12 @@ body {
 }
 /** first setting **/
 .welcome .sc-ion-input-ios-h:not(.legacy-input) {
+  min-height: 30px;
+}
+/** basic **/
+.basic .input-label-placement-start.sc-ion-input-ios-h .label-text-wrapper.sc-ion-input-ios, .basic .input-label-placement-start.sc-ion-input-md-h .label-text-wrapper.sc-ion-input-md {
+  margin-inline-end: 5px;
+}
+.basic .sc-ion-input-ios-h:not(.legacy-input), .social .sc-ion-input-ios-h:not(.legacy-input) {
   min-height: 30px;
 }
