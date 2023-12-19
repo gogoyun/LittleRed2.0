@@ -181,3 +181,7 @@ body {
 .basic .sc-ion-input-ios-h:not(.legacy-input), .social .sc-ion-input-ios-h:not(.legacy-input) {
   min-height: 30px;
 }
+/** basic modal **/
+ion-modal.basic-modal::part(backdrop) {
+  opacity: 0.7 !important;
+}

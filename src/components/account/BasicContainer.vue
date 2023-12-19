@@ -181,18 +181,20 @@
 			</ion-row>
 			<ion-row class="ion-justify-content-center">
 				<ion-col size="11" class="bottom">
-					<ion-button size="small" shape="round" expand="block" class="previewbtn">預覽我的名片</ion-button>
+					<ion-button size="small" shape="round" expand="block" class="previewbtn" id="basic-modal">預覽我的名片</ion-button>
 					<ion-button size="small" shape="round" expand="block" class="sendbtn">儲存個人資料</ion-button>
 				</ion-col>
 			</ion-row>
 		</ion-col>
 	</ion-row>
+	<BasicModal />
 </template>
 <script setup>
 import { ref } from 'vue';
 import { IonRow, IonCol, IonItem, IonInput, IonThumbnail, IonSegment, IonSegmentButton, IonLabel, IonSelect, IonSelectOption, IonButton } from '@ionic/vue';
 import { caretDownSharp } from 'ionicons/icons';
 import pictureUpload from '@/components/common/pictureUpload.vue';
+import BasicModal from '@/components/account/BasicModal.vue';
 import { cityTW } from "@/utils/commonData.js";
 const segmentBorder = ref('0 10px 10px 0');
 const segmentDeg = ref('270deg');
