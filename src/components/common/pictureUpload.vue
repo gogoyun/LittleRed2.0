@@ -42,6 +42,7 @@ const handleFiles = (event) => {
 	}
 	.uploadArea {
 		color: #959595;
+		font-size: 1.2em;
 		min-height: 30vh;
 	}
 	.uploadArea .area {
@@ -49,7 +50,7 @@ const handleFiles = (event) => {
 		justify-content: space-between;
 		align-items: center;
 		position: relative;
-		background: #ccc;
+		background: #eee;
 		border-radius: 10px;
 		height: 100%;
 	}

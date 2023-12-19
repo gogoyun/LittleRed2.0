@@ -2,7 +2,7 @@
 	<ion-row class="ion-no-padding">
 		<ion-col class="padding-horizontal-10">
 			<ion-row>
-				<ion-col class="title">個人資料設定</ion-col>
+				<ion-col class="form-title">個人資料設定</ion-col>
 			</ion-row>
 			<ion-row class="basic">
 				<ion-col>
@@ -57,7 +57,7 @@
 				</ion-col>
 			</ion-row>
 			<ion-row>
-				<ion-col class="title">形象圖上傳<span> 建議尺寸 1080x720px</span></ion-col>
+				<ion-col class="form-title">形象圖上傳<span> 建議尺寸 1080x720px</span></ion-col>
 			</ion-row>
 			<pictureUpload />
 			<ion-row>
@@ -114,7 +114,7 @@
 			</ion-row>
 			<div class="social">
 				<ion-row>
-					<ion-col class="title">我的社群&emsp;<span class="red">＊</span><span>如何串聯我的社群</span>&emsp;<span class="red">教學</span></ion-col>
+					<ion-col class="form-title">我的社群&emsp;<span class="red">＊</span><span>如何串聯我的社群</span>&emsp;<span class="red">教學</span></ion-col>
 				</ion-row>
 				<ion-row class="ion-align-items-center">
 					<ion-col class="input">
@@ -170,7 +170,7 @@
 				</ion-row>
 			</div>
 			<ion-row>
-				<ion-col class="title">代表作（選填）</ion-col>
+				<ion-col class="form-title">代表作（選填）</ion-col>
 			</ion-row>
 			<ion-row>
 				<ion-col class="portfolio">
@@ -204,16 +204,6 @@ const segmentChange = ({ detail }) => {
 }
 </script>
 <style scoped>
-.title {
-	font-size: 1.1em;
-	margin: 5px 0;
-}
-.title span {
-	color: #ccc;
-}
-.title span.red {
-	color: var(--ion-text-color-r-dark)
-}
 .photo-area {
 	display: flex;
 	align-items: center;
@@ -280,7 +270,7 @@ ion-segment-button::before {
 	display: none;
 }
 ion-select {
-	border: 1px solid #808080;
+	border: 1px solid #eee;
 	border-radius: 8px;
 	font-size: 1.2em;
 	min-height: 38px;

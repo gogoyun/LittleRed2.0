@@ -19,6 +19,7 @@
 			</ion-col>
 		</ion-row>
 		<BasicContainer v-if="segmentStatus=='basic'" />
+		<TaxContainer v-if="segmentStatus=='tax'" />
 	</ion-grid>
 </template>
 
@@ -26,6 +27,7 @@
 import { onMounted, ref } from 'vue';
 import { IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonLabel } from '@ionic/vue';
 import BasicContainer from '@/components/account/BasicContainer.vue';
+import TaxContainer from '@/components/account/TaxContainer.vue';
 const segmentStatus = ref('basic');
 const segmentChange = (event) => {
 	const value = event.detail.value;
@@ -40,6 +42,18 @@ onMounted(() => {
 	segmentChange(event);
 });
 </script>
+<style>
+.form-title {
+	font-size: 1.2em;
+	margin: 5px 0;
+}
+.form-title span {
+	color: #ccc;
+}
+.form-title span.red {
+	color: var(--ion-text-color-r-dark)
+}
+</style>
 <style scoped>
 .tabs ion-segment {
 	border-radius: 50px;
