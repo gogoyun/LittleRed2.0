@@ -1,23 +1,23 @@
 export const expertiseData = {
   '形式': [
-    {image: '03-02-01.svg', title: '影片/動態'},
-    {image: '03-02-02.svg', title: '圖文/靜態'},
+    {image: '03-02-01.svg', title: '影片/動態', value: '0'},
+    {image: '03-02-02.svg', title: '圖文/靜態', value: '1'},
   ],
 	'風格': [
-    {image: '03-02-03.svg', title: '幽默/強烈'},
-    {image: '03-02-04.svg', title: '知性/溫和'},
+    {image: '03-02-03.svg', title: '幽默/強烈', value: '0'},
+    {image: '03-02-04.svg', title: '知性/溫和', value: '1'},
   ],
 	'合作方式': [
-		{image: '03-02-05.svg', title: '專業介紹'},
-		{image: '03-02-06.svg', title: '生活美照'},
+		{image: '03-02-05.svg', title: '專業介紹', value: '0'},
+		{image: '03-02-06.svg', title: '生活美照', value: '1'},
 	],
 	'利潤': [
-		{image: '03-02-07.svg', title: '訂單數多'},
-		{image: '03-02-08.svg', title: '單筆利潤高'},
+		{image: '03-02-07.svg', title: '訂單數多', value: '0'},
+		{image: '03-02-08.svg', title: '單筆利潤高', value: '1'},
 	],
 	'實際體驗': [
-		{image: '03-02-09.svg', title: '親身體驗'},
-		{image: '03-02-10.svg', title: '不需體驗'},
+		{image: '03-02-09.svg', title: '親身體驗', value: '0'},
+		{image: '03-02-10.svg', title: '不需體驗', value: '1'},
 	],
 };
 export const interestData = [

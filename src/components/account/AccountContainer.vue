@@ -20,6 +20,7 @@
 		</ion-row>
 		<BasicContainer v-if="segmentStatus=='basic'" />
 		<TaxContainer v-if="segmentStatus=='tax'" />
+		<HabitContainer v-if="segmentStatus=='habit'" />
 	</ion-grid>
 </template>
 
@@ -28,6 +29,7 @@ import { onMounted, ref } from 'vue';
 import { IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonLabel } from '@ionic/vue';
 import BasicContainer from '@/components/account/BasicContainer.vue';
 import TaxContainer from '@/components/account/TaxContainer.vue';
+import HabitContainer from '@/components/account/HabitContainer.vue';
 const segmentStatus = ref('basic');
 const segmentChange = (event) => {
 	const value = event.detail.value;
