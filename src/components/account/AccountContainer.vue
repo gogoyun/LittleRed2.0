@@ -21,6 +21,7 @@
 		<BasicContainer v-if="segmentStatus=='basic'" />
 		<TaxContainer v-if="segmentStatus=='tax'" />
 		<HabitContainer v-if="segmentStatus=='habit'" />
+		<AchieveContainer v-if="segmentStatus=='achieve'" />
 	</ion-grid>
 </template>
 
@@ -30,6 +31,7 @@ import { IonGrid, IonRow, IonCol, IonSegment, IonSegmentButton, IonLabel } from 
 import BasicContainer from '@/components/account/BasicContainer.vue';
 import TaxContainer from '@/components/account/TaxContainer.vue';
 import HabitContainer from '@/components/account/HabitContainer.vue';
+import AchieveContainer from '@/components/account/AchieveContainer.vue';
 const segmentStatus = ref('basic');
 const segmentChange = (event) => {
 	const value = event.detail.value;

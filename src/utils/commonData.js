@@ -40,6 +40,23 @@ export const interestData = [
 	{image: '03-03-17.svg', title: '票券服務'},
 	{image: '03-03-18.svg', title: '其他商品'},
 ];
+export const achieveData = [
+	{image: '07-04-01.png', title: '認識你真好', description: '已完成所有資料設定至少一個社群連結'},
+	{image: '07-04-02.png', title: '我是萬人迷', description: '社群人數達10000人'},
+	{image: '07-04-03.png', title: '1星流量王', description: '代言按鈕總點擊次數累計500次'},
+	{image: '07-04-04.png', title: '2星流量王', description: '代言按鈕總點擊次數累計5000次'},
+	{image: '07-04-05.png', title: '3星流量王', description: '代言按鈕總點擊次數累計12000次'},
+	{image: '07-04-06.png', title: '4星流量王', description: '代言按鈕總點擊次數累計_____次'},
+	{image: '07-04-07.png', title: '5星流量王', description: '代言按鈕總點擊次數累計_____次'},
+	{image: '07-04-08.png', title: '新手上路', description: '已完成第一次代言'},
+	{image: '07-04-09.png', title: '1星小紅', description: '代言商品數累計5件'},
+	{image: '07-04-10.png', title: '2星小紅', description: '代言商品數累計20件'},
+	{image: '07-04-11.png', title: '3星小紅', description: '代言商品數累計50件'},
+	{image: '07-04-12.png', title: '4星小紅', description: '代言商品數累計_____件'},
+	{image: '07-04-13.png', title: '5星小紅', description: '代言商品數累計_____件'},
+	{image: '07-04-14.png', title: '生日快樂', description: '加入小紅計畫滿1年'},
+	{image: '07-04-15.png', title: '超給利', description: '已累計轉換金額達_____元'},
+];
 export const cityTW = [
 	{ id: "台北市",	text:	"台北市" },
 	{ id: "新北市",	text:	"新北市" },
