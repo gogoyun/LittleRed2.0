@@ -46,18 +46,6 @@ onMounted(() => {
 	segmentChange(event);
 });
 </script>
-<style>
-.form-title {
-	font-size: 1.2em;
-	margin: 5px 0;
-}
-.form-title span {
-	color: #ccc;
-}
-.form-title span.red {
-	color: var(--ion-text-color-r-dark)
-}
-</style>
 <style scoped>
 .tabs ion-segment {
 	border-radius: 50px;

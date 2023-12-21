@@ -49,11 +49,13 @@
   </ion-grid>
 	<!-- button  -->
 	<div class="fixed-bottom">
-		<ion-button size="small" shape="round" class="endorseBtn">我要洽談</ion-button>
+		<ion-button size="small" shape="round" class="endorseBtn" id="card-modal">我要洽談</ion-button>
 		<ion-button size="small" shape="round" class="shareBtn" @click="setOpen('isOpen', true)">我要代言</ion-button>
 	</div>
 	<!-- 我要代言 -->
 	<ShareModal ref="setOpenFun" />
+	<!-- 我要洽談 -->
+	<CardModal from="send" />
 </template>
 
 <script setup>
@@ -61,6 +63,7 @@ import { IonGrid, IonRow, IonCol, IonButton } from '@ionic/vue';
 import ChartContainer from '@/components/product/ChartContainer.vue';
 // import modal
 import ShareModal from '@/components/common/ShareModal.vue';
+import CardModal from '@/components/common/CardModal.vue';
 import { setOpen } from '@/utils/common.js';
 </script>
 

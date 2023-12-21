@@ -4,7 +4,7 @@
 			<div class="chip">
 				<div class="red-gradient">代言中</div>
 			</div>
-			<div class="item-right copy">
+			<div class="item-right copy" @click="setOpen('isOpen', true)">
 				<div class="image">
 					<ion-icon :icon="copyOutline" />
 				</div>
@@ -43,7 +43,7 @@
 			<div class="chip">
 				<div class="green">已完成</div>
 			</div>
-			<div class="item-right reendorse">
+			<div class="item-right reendorse" id="card-modal">
 				<div class="image">
 					<ion-img src='assets/icon/message_w.svg' />
 				</div>
@@ -56,11 +56,19 @@
 			</div>
 		</ion-col>
 	</ion-row>
+	<!-- 取得連結 -->
+	<ShareModal ref="setOpenFun" />
+	<!-- 再次代言 -->
+	<CardModal from="send" />
 </template>
 
 <script setup>
 import { IonRow, IonCol, IonImg, IonIcon } from '@ionic/vue';
 import { copyOutline } from 'ionicons/icons';
+// import modal
+import ShareModal from '@/components/common/ShareModal.vue';
+import { setOpen } from '@/utils/common.js';
+import CardModal from '@/components/common/CardModal.vue';
 </script>
 
 <style scoped>

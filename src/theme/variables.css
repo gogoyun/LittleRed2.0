@@ -90,7 +90,7 @@ body {
   --ion-text-color-purple: #4c4072;
   --ion-item-background: rgba(255, 255, 255, 0);
   --ion-font-family: "MElle HK Medium";
-  --ion-font-family-bold: "MElle HKS Xbold";
+  --ion-font-family-bold: "MElle HKS Xbold"; /* only number */
   --ion-font-family-number: "Albert Sans";
   --ion-font-family-score: 'Arya';
   
@@ -181,7 +181,18 @@ body {
 .basic .sc-ion-input-ios-h:not(.legacy-input), .social .sc-ion-input-ios-h:not(.legacy-input) {
   min-height: 30px;
 }
-/** basic modal **/
-ion-modal.basic-modal::part(backdrop) {
+/** card modal **/
+ion-modal.card-modal::part(backdrop) {
   opacity: 0.7 !important;
+}
+/** form **/
+.form-title {
+	font-size: 1.2em;
+	margin: 5px 0;
+}
+.form-title span {
+	color: #ccc;
+}
+.form-title span.red {
+	color: var(--ion-text-color-r-dark)
 }

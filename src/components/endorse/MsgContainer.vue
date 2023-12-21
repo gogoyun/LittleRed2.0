@@ -110,7 +110,7 @@
 							<div class="title ion-text-wrap hide-line">獨家訂製。物理抗菌雙層便當盒</div>
 							<div class="sku">ABC002</div>
 						</div>
-						<div class="item-right reendorse">
+						<div class="item-right reendorse" id="card-modal">
 							<div class="image">
 								<ion-img src='assets/icon/message_w.svg' />
 							</div>
@@ -150,7 +150,10 @@
 			<ion-infinite-scroll-content></ion-infinite-scroll-content>
 		</ion-infinite-scroll>
 	</ion-row>
+	<!-- 取得連結 -->
 	<ShareModal ref="setOpenFun" />
+	<!-- 再次代言 -->
+	<CardModal from="send" />
 </template>
 
 <script setup>
@@ -160,6 +163,7 @@ const trangleH = '8px';
 // import modal
 import ShareModal from '@/components/common/ShareModal.vue';
 import { setOpen } from '@/utils/common.js';
+import CardModal from '@/components/common/CardModal.vue';
 </script>
 
 <style scoped>

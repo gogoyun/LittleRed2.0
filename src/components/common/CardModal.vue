@@ -1,8 +1,9 @@
 <template>
 	<ion-modal
 		ref="modal"
-		trigger="basic-modal"
-		class="basic-modal"
+		trigger="card-modal"
+		class="card-modal"
+		@didPresent="didPresent()"
 	>
 		<div class="modal">
 			<div class="avatar">
@@ -23,7 +24,7 @@
 							<div class="middle">
 								<ion-button>
 									<ion-thumbnail>
-										<img src='assets/icon/account/check.png'>
+										<img src='assets/icon/common/check.png'>
 									</ion-thumbnail>
 									代表<br>作品
 								</ion-button>
@@ -32,7 +33,7 @@
 									<div class="phone ion-text-center">
 										<div>0910-000-120 | TAIWAN</div>
 										<ion-thumbnail>
-											<img src='assets/icon/account/phone.svg'>
+											<img src='assets/icon/common/phone.svg'>
 										</ion-thumbnail>
 									</div>
 								</div>
@@ -96,9 +97,23 @@
 							</div>
 						</ion-col>
 					</ion-row>
+					<ion-row v-if="props.from == 'send'">
+						<ion-col>
+							<ion-row>
+								<ion-col class="form-title">其他附件上傳<span class="red">（檔案大小限制1mb/ 5個檔案 jpg/pdf）</span></ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col>
+									<fileUpload />
+									<fileUpload />
+									<fileUpload />
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
 				</ion-grid>
 				<div class="fixed-bottom">
-					<ion-button size="small" shape="round" class="sendbtn">儲存我的名片</ion-button>
+					<ion-button size="small" shape="round" class="sendbtn">{{ (props.from == 'send') ? '發送': '儲存' }}我的名片</ion-button>
 					<ion-button size="small" shape="round" class="closebtn" @click="cancel()">關閉</ion-button>
 				</div>
 			</div>
@@ -108,8 +123,31 @@
 <script setup>
 import { ref } from 'vue';
 import { IonGrid, IonModal, IonThumbnail, IonImg, IonButton, IonRow, IonCol } from '@ionic/vue';
+import fileUpload from '@/components/common/fileUpload.vue';
 const modal = ref();
 const cancel = () => modal.value.$el.dismiss(null, 'cancel');
+const props = defineProps({
+  from: { type: String, default: 'edit' }
+})
+const didPresent = () => {
+	const lastScrollTop = ref(0);
+	const modal = document.querySelector('.card-modal');
+	modal.querySelector('.content').addEventListener('scroll', function(event) {
+		const scrollTop = event.target.scrollTop;
+		if (scrollTop > lastScrollTop.value) {
+			// 向下滾動
+			if(!modal.querySelector(".fixed-bottom").classList.contains("hide")){
+				modal.querySelector(".fixed-bottom").classList.add("hide");
+			}
+		} else if (scrollTop < lastScrollTop.value) {
+			// 向上滾動
+			if(modal.querySelector(".fixed-bottom").classList.contains("hide")){
+				modal.querySelector(".fixed-bottom").classList.remove("hide");
+			}
+		}
+		lastScrollTop.value = scrollTop;
+	});
+}
 </script>
 <style scoped>
 	ion-modal {
@@ -132,6 +170,7 @@ const cancel = () => modal.value.$el.dismiss(null, 'cancel');
 		background: #fff;
 		border-radius: 50%;
 		padding: 5px;
+		z-index: 999999999;
 	}
 	.avatar ion-thumbnail {
 		--border-radius: 50%;
@@ -145,6 +184,7 @@ const cancel = () => modal.value.$el.dismiss(null, 'cancel');
 		border-radius: 6px;
 		background: #fff;
 		box-shadow: 0 0 8px 5px rgb(0 0 0 / 0.3);
+		overflow-y: auto;
 	}
 	.main-image ion-img::part(image) {
 		border-radius: 6px 6px 0 0;
@@ -187,7 +227,7 @@ const cancel = () => modal.value.$el.dismiss(null, 'cancel');
 		justify-content: center;
 		font-size: 0.75em;
 		font-family: var(--ion-font-family-score);
-		color: #39b04a;
+		color: #77c414;
 	}
 	.phone ion-thumbnail {
 		--size: 1.6em;
@@ -224,12 +264,16 @@ const cancel = () => modal.value.$el.dismiss(null, 'cancel');
 		font-size: 1.8em;
 	}
 	.fixed-bottom {
-		position: absolute;
+		position: fixed;
 		bottom: calc(5% - 2em); /* sync content 100% - height */
 		width: 90%; /* sync content width */
 		display: flex;
 		justify-content: center;
-		padding: 0 0 5vh;
+		padding: 0 0 16px;
+		transition: bottom .4s ease-in-out;
+	}
+	.fixed-bottom.hide {
+		bottom: -90px;
 	}
 	.fixed-bottom ion-button {
 		font-size: 1.7em;
