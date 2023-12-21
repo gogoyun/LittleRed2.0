@@ -67,7 +67,7 @@
 							<ion-col size="auto" v-for="item in interestData" :key="item">
 								<div class="item" @click="active($event)">
 									<ion-thumbnail>
-										<img :src="`assets/icon/account/${ item.image }`" />
+										<img :src="`assets/icon/account/interest/${ item.image }`" />
 									</ion-thumbnail>
 									<div class="title ion-text-center">{{ item.title }}</div>
 								</div>
