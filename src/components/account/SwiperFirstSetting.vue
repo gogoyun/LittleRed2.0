@@ -44,7 +44,7 @@
 								<div class="items">
 									<div class="item" v-for="item2 in item" :key="item2" @click="active($event)">
 										<ion-thumbnail>
-											<img :src="`assets/icon/account/${ item2.image }`" />
+											<img :src="`assets/icon/account/interest/${ item2.image }`" />
 										</ion-thumbnail>
 										<div class="title ion-text-center">{{ item2.title }}</div>
 									</div>

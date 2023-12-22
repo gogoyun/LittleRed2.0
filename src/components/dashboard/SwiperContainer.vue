@@ -7,7 +7,7 @@
 		>
 			<swiper-slide>
 				<div class="swiper-list">
-					<div class="tag">專屬打造</div>
+					<div class="tag ion-text-center">專屬打造</div>
 					<div class="half-circle"></div>
 					<div class="info-area" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://image-cdn-flare.qdm.cloud/q676af567a5c1f/image/data/2023_%E6%AA%9C%E6%9C%A8%E7%B3%BB%E5%88%97/_DSC0622_2000_02.jpg');">
 						<div class="profit">
@@ -30,7 +30,7 @@
 			</swiper-slide>
 			<swiper-slide>
 				<div class="swiper-list">
-					<div class="tag">專屬打造</div>
+					<div class="tag ion-text-center">專屬打造</div>
 					<div class="half-circle"></div>
 					<div class="info-area" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://image-cdn-flare.qdm.cloud/q676af567a5c1f/image/data/2023_%E6%AA%9C%E6%9C%A8%E7%B3%BB%E5%88%97/_DSC0622_2000_02.jpg');">
 						<div class="profit">
@@ -53,7 +53,7 @@
 			</swiper-slide>
 			<swiper-slide>
 				<div class="swiper-list">
-					<div class="tag">專屬打造</div>
+					<div class="tag ion-text-center">專屬打造</div>
 					<div class="half-circle"></div>
 					<div class="info-area" style="background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://image-cdn-flare.qdm.cloud/q676af567a5c1f/image/data/2023_%E6%AA%9C%E6%9C%A8%E7%B3%BB%E5%88%97/_DSC0622_2000_02.jpg');">
 						<div class="profit">

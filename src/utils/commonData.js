@@ -40,6 +40,16 @@ export const interestData = [
 	{image: '03-03-17.svg', title: '票券服務'},
 	{image: '03-03-18.svg', title: '其他商品'},
 ];
+export const productSort = [
+	{value: '', title: '依類型:代言中、洽談中'},
+	{value: '', title: '代言日期:新⸺舊'},
+	{value: '', title: '分潤/轉換金額:高⸺低'},
+];
+export const brandSort = [
+	{value: '', title: '依評等:高⸺低'},
+	{value: '', title: '已代言數:高⸺低'},
+	{value: '', title: '商品數:高⸺低'},
+];
 export const achieveData = [
 	{image: '07-04-01.png', title: '認識你真好', description: '已完成所有資料設定至少一個社群連結'},
 	{image: '07-04-02.png', title: '我是萬人迷', description: '社群人數達10000人'},

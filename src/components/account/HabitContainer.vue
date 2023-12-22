@@ -37,7 +37,7 @@
 	</ion-row>
 </template>
 <script setup>
-import { IonRow, IonCol, IonSegment, IonSegmentButton, IonLabel } from '@ionic/vue';
+import { IonRow, IonCol, IonSegment, IonSegmentButton, IonLabel, IonThumbnail } from '@ionic/vue';
 import { expertiseData, interestData } from "@/utils/commonData.js";
 const active = (event) => {
 	if(event.target.parentNode.parentNode.classList.contains('active')){

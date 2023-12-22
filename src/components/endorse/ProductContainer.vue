@@ -56,6 +56,9 @@
 			</div>
 		</ion-col>
 	</ion-row>
+	<ion-infinite-scroll>
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 	<!-- 取得連結 -->
 	<ShareModal ref="setOpenFun" />
 	<!-- 再次代言 -->
@@ -63,7 +66,7 @@
 </template>
 
 <script setup>
-import { IonRow, IonCol, IonImg, IonIcon } from '@ionic/vue';
+import { IonRow, IonCol, IonImg, IonIcon, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/vue';
 import { copyOutline } from 'ionicons/icons';
 // import modal
 import ShareModal from '@/components/common/ShareModal.vue';
@@ -83,7 +86,7 @@ import CardModal from '@/components/common/CardModal.vue';
 	}
 	.chip div {
 		padding: 4px 10px 5px;
-		font-size: 0.9em;
+		font-size: 1em;
 	}
 	.item-right {
 		position: absolute;
@@ -93,9 +96,9 @@ import CardModal from '@/components/common/CardModal.vue';
 		display: flex;
 		flex-direction: column;
 		border-radius: 0 6px 0 15px;
-		padding: 8px 5px 12px;
+		padding: 8px 2px 12px;
 		margin-bottom: 10px;
-		font-size: 1em;
+		font-size: 1.2em;
 	}
 	.item-right.msg {
 		justify-content: flex-start;
@@ -106,7 +109,7 @@ import CardModal from '@/components/common/CardModal.vue';
 			position: absolute;
 			top: 0;
 			right: 0;
-			font-size: 0.6em;
+			font-size: 0.8em;
 			color: var(--color-white);
 			background: var(--ion-text-color-r-light);
 			border-radius: 50%;
@@ -120,7 +123,7 @@ import CardModal from '@/components/common/CardModal.vue';
 		color: var(--color-white);
 	}
 		.item-right.copy ion-icon {
-			font-size: 1.4em;
+			font-size: 1.6em;
 		}
 	.item-right.reendorse {
 		justify-content: center;
@@ -130,7 +133,8 @@ import CardModal from '@/components/common/CardModal.vue';
 	}
 	.item-right .image {
 		position: relative;
-		width: 55%;
+		width: 100%;
+		max-width: 30px;
 		padding: 5px;
 	}
 	.item ion-img::part(image) {
@@ -157,5 +161,10 @@ import CardModal from '@/components/common/CardModal.vue';
 	.item .text .percent span {
 		font-size: 0.5em;
 		margin: 3px 3px 0 0;
+	}
+	@media all and (max-width: 390px) {
+		.item-right {
+			font-size: 1em;
+		}
 	}
 </style>

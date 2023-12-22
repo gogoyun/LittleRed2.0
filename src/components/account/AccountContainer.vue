@@ -75,4 +75,15 @@ onMounted(() => {
 .tabs ion-segment-button::before {
 	display: none;
 }
+@media all and (max-width: 390px) {
+	.tabs ion-segment-button {
+		font-size: 1.2em;
+		--padding-top: 10px;
+		--padding-bottom: 10px;
+	}
+	.tabs ion-segment-button::part(native) {
+		--padding-start: 5px;
+		--padding-end: 5px;
+	}
+}
 </style>

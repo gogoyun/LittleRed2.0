@@ -266,7 +266,8 @@ import CardModal from '@/components/common/CardModal.vue';
 	}
 	.item-right .image {
 		position: relative;
-		width: 60%;
+		width: 100%;
+		max-width: 30px;
 		padding: 5px;
 	}
 	.item-right ion-image {
@@ -340,5 +341,22 @@ import CardModal from '@/components/common/CardModal.vue';
 		color: var(--ion-text-color-r-dark);
 		font-size: 0.6em;
 		padding: 2px 2px 0 0;
+	}
+	@media all and (max-width: 390px) {
+		.chip div {
+			font-size: 0.7em;
+		}
+		.item-right .title {
+			font-size: 0.7em;
+		}
+		.item-middle {
+			padding: 10px 10px 0;
+		}
+		.item-bottom {
+			padding: 0 10px 15px;
+		}
+		.value {
+			font-size: 1em;
+		}
 	}
 </style>

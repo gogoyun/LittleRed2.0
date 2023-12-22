@@ -20,7 +20,7 @@
 				</ion-segment>
 				<div class="tabs-border-right"></div>
 			</ion-col>
-			<ion-col size="3" class="total ion-text-right ion-padding-end">
+			<ion-col size="4" class="total ion-text-right ion-padding-end">
 				<div>共計 <span>0,000</span> 件</div>
 			</ion-col>
 			<div class="border-bottom"></div>
@@ -53,28 +53,11 @@
 						<ion-col class="ion-no-padding">
 							<ion-select
 								label="排序"
+								interface="action-sheet"
+								selected-text=" "
 								:toggle-icon="caretDownOutline"
 							>
-								<ion-select-option value="">依類型:代言中、洽談中</ion-select-option>
-								<ion-select-option value="">代言日期:新⸺舊</ion-select-option>
-								<ion-select-option value="">分潤/轉換金額:高⸺低</ion-select-option>
-							</ion-select>
-						</ion-col>
-					</ion-row>
-				</ion-col>
-				<ion-col size="auto" class="brand ion-hide">
-					<ion-row class="ion-align-items-center">
-						<ion-col>
-							<ion-button size="small">匯出</ion-button>
-						</ion-col>
-						<ion-col>
-							<ion-select
-								label="排序"
-								:toggle-icon="caretDownOutline"
-							>
-								<ion-select-option value="">依評等:高⸺低</ion-select-option>
-								<ion-select-option value="">已代言數:高⸺低</ion-select-option>
-								<ion-select-option value="">商品數:高⸺低</ion-select-option>
+							<ion-select-option :value="item.value" v-for="item in sortData" :key="item">{{ item.title }}</ion-select-option>
 							</ion-select>
 						</ion-col>
 					</ion-row>
@@ -97,8 +80,10 @@ import { onMounted, defineAsyncComponent, ref } from 'vue';
 import { IonGrid, IonRow, IonCol, IonItem, IonInput, IonThumbnail, IonSegment, IonSegmentButton, IonLabel, IonButton, IonSelect, IonSelectOption } from '@ionic/vue';
 import { caretDownOutline } from 'ionicons/icons';
 import MsgContainer from '@/components/endorse/MsgContainer.vue';
+import { productSort, brandSort } from "@/utils/commonData.js";
 const segmentStatus = ref('message');
 const searchTitle = ref('商品');
+const sortData = ref(null);
 const ProductDetail = defineAsyncComponent(() =>
 	import('@/components/endorse/ProductContainer.vue')
 );
@@ -109,22 +94,21 @@ const segmentChange = (event) => {
 	const value = event.detail.value;
 	const filter = document.querySelector('.filter');
 	const sort = document.querySelector('.sort');
-	const brand = document.querySelector('.brand');
 	if (value=='product') { //代言商品
 		filter.classList.add("ion-hide");
 		sort.classList.remove("ion-hide");
-		brand.classList.add("ion-hide");
 		searchTitle.value = '商品';
+		sortData.value = productSort;
 	}else if (value=='brand') { //代言品牌
 		filter.classList.add("ion-hide");
-		sort.classList.add("ion-hide");
-		brand.classList.remove("ion-hide");
+		sort.classList.remove("ion-hide");
 		searchTitle.value = '品牌';
+		sortData.value = brandSort;
 	}else {
 		filter.classList.remove("ion-hide");
 		sort.classList.add("ion-hide");
-		brand.classList.add("ion-hide");
 		searchTitle.value = '商品';
+		sortData.value = null;
 	}
 	segmentStatus.value = value;
 }
@@ -167,7 +151,7 @@ onMounted(() => {
 	.list-bar ion-segment {
 		--background: rgba(0, 0, 0, 0);
 		border-radius: 0;
-		
+		min-width: 220px;
 	}
 	.list-bar ion-segment-button {
 		color: var(--color);
@@ -277,5 +261,10 @@ onMounted(() => {
 	}
 	.sort ion-select::part(icon), .brand ion-select::part(icon) {
 		margin-inline-start: 0;
+	}
+	@media all and (max-width: 390px) {
+		.search ion-segment-button {
+			font-size: 1em;
+		}
 	}
 </style>

@@ -108,7 +108,7 @@ const props = defineProps({
 	ion-toolbar {
 		--background: rgba(255, 255, 255, v-bind(props.opacity));
 		box-shadow: 0px rgba(255, 255, 255, 0) !important;
-		--padding-end: 30px;
+		--padding-end: 5px;
 		--min-height: 80px;
 	}
 	ion-modal {

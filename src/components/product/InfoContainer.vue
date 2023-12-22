@@ -18,19 +18,24 @@
 							<div class="price">NT.12,399</div><div class="sale">33% OFF</div>
 						</div>
 						<ion-row>
-							<ion-col class="profit ion-text-center">
-								<div class="value">7,320</div>
-								<div class="title">可分潤金額 / 筆</div>
-							</ion-col>
-							<ion-col class="profit ion-text-center">
-								<div class="value">129,487</div>
-								<div class="title">曝光次數</div>
-							</ion-col>
-							<ion-col class="profit ion-text-center gray">
-								<div class="value">***</div>
-								<div class="title">代言轉換率 / %</div>
+							<ion-col class="profit-area">
+								<ion-row>
+									<ion-col class="profit ion-text-center">
+										<div class="value">7,320</div>
+										<div class="title">可分潤金額 / 筆</div>
+									</ion-col>
+									<ion-col class="profit ion-text-center">
+										<div class="value">129,487</div>
+										<div class="title">曝光次數</div>
+									</ion-col>
+									<ion-col class="profit ion-text-center gray">
+										<div class="value">***</div>
+										<div class="title">代言轉換率 / %</div>
+									</ion-col>
+								</ion-row>
 							</ion-col>
 						</ion-row>
+						
 						<div class="tags">
 							<div class="outline">影片</div>
 							<div class="outline">圖文</div>
@@ -108,9 +113,12 @@ h1 {
 .price-price-block {
 	justify-content: center;
 }
+.profit-area {
+	margin: 15px 0 10px;
+}
 .profit {
 	padding: 30px 10px;
-	margin: 20px 5px 15px;
+	margin: 5px;
 	background: rgba(76, 64, 114, 0.2);
 	border-radius: 6px;
 	color: var(--ion-text-color-purple);

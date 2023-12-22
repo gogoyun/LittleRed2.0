@@ -8,6 +8,10 @@ http://ionicframework.com/docs/theming/ */
 @import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
 
 /** basic **/
+ion-app {
+  max-width: 576px;
+  margin: auto;
+}
 body {
   font-size: clamp(10px, calc(10px + (12 - 8)*(100vw - 375px)/(768 - 375)), 12px);
 }

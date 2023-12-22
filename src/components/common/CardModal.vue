@@ -41,7 +41,7 @@
 						</ion-col>
 					</ion-row>
 					<ion-row class="ion-justify-content-center">
-						<ion-col size="10" sizeMd="4">
+						<ion-col size="10">
 							<ion-row class="social">
 								<ion-col>
 									<ion-thumbnail>
@@ -170,7 +170,6 @@ const didPresent = () => {
 		background: #fff;
 		border-radius: 50%;
 		padding: 5px;
-		z-index: 999999999;
 	}
 	.avatar ion-thumbnail {
 		--border-radius: 50%;
@@ -296,5 +295,24 @@ const didPresent = () => {
 		--background-hover: linear-gradient(270deg, var(--ion-text-color-r-dark),var(--ion-text-color-r-light),var(--ion-text-color-r-light));
 		--background-focused: linear-gradient(270deg, var(--ion-text-color-r-dark),var(--ion-text-color-r-light),var(--ion-text-color-r-light));
 		--background-activated: linear-gradient(270deg, var(--ion-text-color-r-dark),var(--ion-text-color-r-light),var(--ion-text-color-r-light));
+	}
+	/* mibile */
+	@media all and (max-width: 390px) {
+		.social ion-thumbnail {
+			--size: 3.1em;
+		}
+		.profit .title {
+			font-size: 0.8em;
+		}
+		.profit .value {
+			font-size: 1.5em;
+		}
+		.fixed-bottom ion-button {
+			font-size: 1.5em;
+			--padding-top: 12px;
+			--padding-bottom: 12px;
+			--padding-start: 1em;
+			--padding-end: 1em;
+		}
 	}
 </style>

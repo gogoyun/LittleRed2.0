@@ -1,7 +1,7 @@
 <template>
 	<ion-grid id="login">
 		<ion-row class="ion-justify-content-center">
-			<ion-col size="9" sizeMd="4">
+			<ion-col size="9">
 				<ion-row>
 					<ion-col class="ion-padding-vertical mT80 logo" @click="IORegister(0.1)">
 						<ion-thumbnail>
@@ -51,7 +51,7 @@
 			</ion-col>
 		</ion-row>
 		<ion-row class="ion-justify-content-center hidePlace ion-hide">
-			<ion-col size="9" sizeMd="4">
+			<ion-col size="9">
 				<ion-row class="social">
 					<ion-col>
 						<ion-thumbnail>
@@ -178,4 +178,31 @@ import { IORegister } from "@/utils/common.js";
 		display: flex;
 		justify-content: center;
 	}
+	@media all and (max-width: 390px) {
+		.mT80 {
+			margin-top: 10px;
+		}
+		.mT80Out {
+			animation: mT80Out 0.5s forwards;
+		}
+		@keyframes mT80Out {
+			0% {
+				margin-top: 10px;
+			}
+			100% {
+				margin-top: 0;
+			}
+		}
+		.mT80In {
+			animation: mT80In 0.5s forwards;
+		}
+		@keyframes mT80In {
+			0% {
+				margin-top: 0;
+			}
+			100% {
+				margin-top: 10px;
+			}
+		}
+  }
 </style>
