@@ -75,4 +75,13 @@ import { IonGrid, IonRow, IonCol, IonThumbnail } from '@ionic/vue';
 	.whiteBg ion-thumbnail {
 		--size: 3.2em;
 	}
+	@media all and (max-width: 390px) {
+		.whiteBg {
+			width: 3em;
+			height: 3em;
+		}
+		.whiteBg ion-thumbnail {
+			--size: 2.5em;
+		}
+	}
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<ion-row class="ion-justify-content-center">
-		<ion-col size="9">
+		<ion-col size="10" class="grid-padding">
 			<div class="chart-top">
 				<div class="chart-label ion-text-center">
 					<ion-icon :icon="ellipseSharp" />
@@ -124,6 +124,10 @@ const data = {
 </script>
 
 <style scoped>
+	.grid-padding {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 	.chart-top, .chart-bottom {
 		display: flex;
 		justify-content: space-between;
@@ -163,5 +167,11 @@ const data = {
 	}
 	ion-icon {
 		margin-left: 3px;
+	}
+	@media all and (max-width: 390px) {
+		.grid-padding {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 </style>

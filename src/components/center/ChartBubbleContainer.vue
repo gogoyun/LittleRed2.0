@@ -1,6 +1,6 @@
 <template>
 	<ion-row class="ion-justify-content-center">
-		<ion-col size="9">
+		<ion-col size="10" class="grid-padding">
 			<div class="chart">
 				<highcharts :options="chartOptions"></highcharts>
 			</div>
@@ -148,6 +148,10 @@ const chartOptions = {
 </script>
 
 <style scoped>
+	.grid-padding {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 	.bottom {
 		display: flex;
 		justify-content: center;
@@ -159,5 +163,11 @@ const chartOptions = {
 	ion-icon {
 		margin-right: 3px;
 		opacity: 0.4;
+	}
+	@media all and (max-width: 390px) {
+		.grid-padding {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 </style>

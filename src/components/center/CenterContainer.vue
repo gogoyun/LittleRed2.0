@@ -203,6 +203,7 @@ const trangleH = '7px';
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		padding: 8px;
 	}
 	.no-info ion-button {
 		font-size: 1.1em;
@@ -217,5 +218,13 @@ const trangleH = '7px';
 		width: 100%;
 		height: 1px;
 		background: #808080;
+	}
+	@media all and (max-width: 390px) {
+		ion-grid {
+			padding: 4%;
+		}
+		.social-count .value {
+			font-size: 1.6em;
+		}
 	}
 </style>

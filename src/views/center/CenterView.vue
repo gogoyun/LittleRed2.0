@@ -92,6 +92,9 @@
 	});
 	</script>
 	<style scoped>
+	ion-content::part(background) {
+		background: #ebdcce;
+	}
 	ion-content.changeBg::part(background) {
 		background: var(--color);
 	}
@@ -176,7 +179,6 @@
 		right: 0;
 		top: 44%;
 		width: 90%;
-		height: 70%;
 		border-radius: 10px 0 0 10px;
 	}
 	.transform.toFull {
@@ -187,7 +189,6 @@
 				right: 0;
 				top: 44%;
 				width: 90%;
-				height: 70%;
 				border-radius: 10px 0 0 10px;
 			}
 			100% {
@@ -213,8 +214,13 @@
 				right: 0;
 				top: 44%;
 				width: 90%;
-				height: 70%;
 				border-radius: 10px 0 0 10px;
 			}
 		}
+	@media all and (max-width: 390px) {
+		.photo ion-thumbnail {
+			width: 7em;
+			height: 7em;
+		}
+	}
 	</style>
