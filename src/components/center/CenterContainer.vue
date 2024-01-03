@@ -211,6 +211,7 @@ const trangleH = '7px';
 		--padding-bottom: 10px;
 		--padding-start: 6px;
 		--padding-end: 6px;
+		--box-shadow: none;
 	}
 	.border-bottom {
 		width: 100%;

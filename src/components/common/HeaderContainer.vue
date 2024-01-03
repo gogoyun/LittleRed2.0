@@ -3,7 +3,7 @@
 		<ion-toolbar>
 			<ion-buttons slot="start">
 				<ion-button id="menu-modal" expand="block">
-					<ion-icon :icon="menuOutline" :class="menuColor" />
+					<ion-icon :icon="menuOutline" :class="logoColor" />
 				</ion-button>
 			</ion-buttons>
 			<ion-buttons>
@@ -97,7 +97,7 @@ import { IonHeader, IonToolbar, IonGrid, IonRow, IonCol, IonButtons, IonButton, 
 import { menuOutline } from 'ionicons/icons';
 const props = defineProps({
   opacity: { type: Number, default: 1 },
-	menuColor: { type: String, default: '' },
+	logoColor: { type: String, default: '' },
 	avatarHide: { type: String, default: '' },
 	changeLogo: { type: String, default: '' },
 	avatarClick: { type: Object, default() { return { display: 'block' } } }

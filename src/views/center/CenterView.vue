@@ -1,8 +1,8 @@
 	<template>
 		<ion-page>
-			<HeaderContainer :opacity="0" :menuColor="menuColor" :avatarHide="avatarHide" :changeLogo="changeLogo" :avatarClick="avatarClick" />
+			<HeaderContainer :opacity="0" :logoColor="logoColor" :avatarHide="avatarHide" :changeLogo="changeLogo" :avatarClick="avatarClick" />
 			<ion-content :fullscreen="true">
-				<div class="bg">
+				<div id="basicBg" class="bg">
 					<ion-img src="assets/image/center_bg.svg"></ion-img>
 				</div>
 				<div :class="`photo ${ avatarStyle }`">
@@ -15,7 +15,7 @@
 				</div>
 				<div :class="`transform ${ bgStyle }`">
 					<CenterContainer v-if="showLayer==1" />
-					<SwiperContainer v-if="showLayer==2" />
+					<SwiperContainer v-if="showLayer==2" @change-back="cssChangeBack" />
 				</div>
 			</ion-content>
 		</ion-page>
@@ -31,14 +31,14 @@
 	const showLayer = ref(1);
 	const avatarHide = 'ion-hide';
 	const avatarClick = reactive({display: 'none'});
-	const menuColor = ref('');
+	const logoColor = ref('');
 	const bgStyle = ref('');
 	const avatarStyle = ref('');
 	const hide = ref('');
 	const changeLogo = ref('');
 	const cssChange = () => {
 		showLayer.value = 2;
-		menuColor.value = 'white';
+		logoColor.value = 'white';
 		bgStyle.value = 'toFull';
 		avatarStyle.value = 'toHeader';
 		avatarClick.value = {
@@ -47,33 +47,40 @@
 		}
 		hide.value = 'ion-hide';
 		changeLogo.value = 'changeLogo';
+		//底部背景
+		setTimeout(() => {
+			document.getElementById("basicBg").classList.add("ion-hide");
+		}, 500);
+		document.querySelector("ion-content").classList.add("changeBg");
 	}
 	const cssChangeBack = () => {
 		showLayer.value = 1;
-		menuColor.value = '';
-		bgStyle.value = '';
-		avatarStyle.value = '';
+		logoColor.value = '';
+		bgStyle.value = 'leaveFull';
+		avatarStyle.value = 'leaveHeader';
 		avatarClick.value = {display: 'none'}
-		hide.value = '';
+		setTimeout(() => {
+			hide.value = '';
+		}, 500);
 		changeLogo.value = '';
+		//底部背景
+		document.getElementById("basicBg").classList.remove("ion-hide");
+		document.querySelector("ion-content").classList.remove("changeBg");
 	}
 	onMounted(() => {
 		let items = document.querySelector('ion-content');
 		let isActive = false
 		let startX; //滑鼠所在位置
 		let locationNow; //卷軸現在位置
-		items.addEventListener('mousedown', (e) => {
+		items.addEventListener('dragstart', (e) => {
 			isActive = true
 			locationNow = items.scrollLeft
 			startX = e.pageX //點下去就先取得起點位置
 		});
-		items.addEventListener('mouseup',()=>{
+		items.addEventListener('dragend',()=>{
 			isActive = false
 		})
-		items.addEventListener('mouseleave',()=>{
-			isActive = false
-		})
-		items.addEventListener('mousemove',(e)=>{
+		items.addEventListener('drag',(e)=>{
 			if(!isActive) return
 			let moveafter = e.pageX
 			let move = moveafter - startX //實際要移動的量
@@ -81,16 +88,20 @@
 			const target = locationNow - move;
 			//向右移動超過10，轉至第二頁
 			if(target> 10){cssChange()}
-			//向左移動超過10，轉回第一頁
-			if(target< -10){cssChangeBack()}
 		})
 	});
 	</script>
 	<style scoped>
+	ion-content.changeBg::part(background) {
+		background: var(--color);
+	}
 	.bg {
 		position: absolute;
 		width: 100%;
 		top: 0;
+	}
+	.bg.toFull {
+		display: none;
 	}
 	.photo {
 		position: absolute;
@@ -113,6 +124,20 @@
 				right: 18px;
 			}
 		}
+	.photo.leaveHeader {
+		animation: leaveToHeader 0.5s ease-in-out forwards;
+	}
+		@keyframes leaveToHeader {
+			0% {
+				width: 48px;
+				top: 18px;
+				right: 18px;
+			}
+			100% {
+				top: 13%;
+				right: 0;
+			}
+		}
 	.photo ion-thumbnail {
 		--border-radius: 50%;
 		margin: 0 auto;
@@ -130,6 +155,19 @@
 			100% {
 				width: 4.2em;
 				height: 4.2em;
+			}
+		}
+	.photo ion-thumbnail.leaveHeader {
+		animation: sizeLeaveHeader 0.5s ease-in-out forwards;
+	}
+		@keyframes sizeLeaveHeader {
+			0% {
+				width: 4.2em;
+				height: 4.2em;
+			}
+			100% {
+				width: 8.5em;
+				height: 8.5em;
 			}
 		}
 	.transform {
@@ -158,6 +196,25 @@
 				width: 100%;
 				height: 100%;
 				border-radius: 0;
+			}
+		}
+	.transform.leaveFull {
+		animation: sizeLeaveFull 0.5s ease-in-out forwards;
+	}
+		@keyframes sizeLeaveFull {
+			0% {
+				right: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+			}
+			100% {
+				right: 0;
+				top: 44%;
+				width: 90%;
+				height: 70%;
+				border-radius: 10px 0 0 10px;
 			}
 		}
 	</style>

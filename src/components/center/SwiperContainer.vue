@@ -3,6 +3,7 @@
 		<swiper
 			:modules="modules"
 			:pagination="pagination"
+			@touchMove="touchMove"
 			class="centerSwiper"
 		>
 			<swiper-slide>
@@ -62,12 +63,17 @@ const pagination = {
 	},
 };
 const modules = [Pagination]
+const emit = defineEmits(['changeBack']);
+const touchMove = (event) => {
+	if(event.swipeDirection=='prev' && event.previousTranslate>10 && event.activeIndex==0) {
+	emit('changeBack');
+	}	
+}
 </script>
 <style scoped>
 	.wrapper {
 		margin-top: 80px; /* header height */
 		width: 100%;
-		height: 100%;
 	}
 	.swiper-list {
 		height: 100%;

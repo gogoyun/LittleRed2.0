@@ -77,7 +77,7 @@ import { options } from "@/components/center/barConfig.js";
 ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend, Filler)
 //chart1
 const pointImage = new Image(20, 20);
-pointImage.src = "/assets/icon/logo.svg";
+pointImage.src = "/assets/icon/logo_chart.svg";
 const data = {
 	labels: [1, 2, 3, 4, 5],
 	datasets: [
